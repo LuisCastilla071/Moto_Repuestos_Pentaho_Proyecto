@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moto Repuestos Leyton - Ejercicios</title>
+    <meta name="description" content="Descripción de los ejercicios realizados con Pentaho para el análisis de datos de Moto Repuestos Leyton.">
+    <meta name="author" content="[Tu Nombre]">
+    <meta property="og:title" content="Moto Repuestos Leyton - Ejercicios con Pentaho">
+    <meta property="og:description" content="Detalle de los flujos ETL y cubos OLAP desarrollados para el proyecto.">
+    <meta property="og:image" content="assets/img/og-image.png">
+    <meta property="og:url" content="[URL del sitio desplegado]/ejercicios.html">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    
+    <!-- CDNs -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Estilos personalizados -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="navbar-bg p-4 text-white sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">Moto Repuestos Leyton</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="index.html" class="hover:text-gray-300">Inicio</a>
+                <a href="ejercicios.html" class="hover:text-gray-300">Ejercicios</a>
+                <div class="relative" x-data="{ open: false }">
+                    <a href="#" @click="open = !open" class="hover:text-gray-300">Gráficos <i class="fas fa-chevron-down text-xs"></i></a>
+                    <div x-show="open" @click.away="open = false" class="absolute left-0 mt-2 w-48 navbar-bg dropdown-menu rounded-md shadow-lg py-1 z-20">
+                        <a href="p5_graficos.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Gráficos P5</a>
+                        <a href="p6_grafico.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Gráficos P6</a>
+                        <a href="p8_graficos.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Gráficos P8</a>
+                    </div>
+                </div>
+                <a href="creditos.html" class="hover:text-gray-300">Créditos</a>
+            </div>
+            <button class="md:hidden" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="hidden md:hidden mt-2" id="mobile-menu">
+            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Inicio</a>
+            <a href="ejercicios.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Ejercicios</a>
+            <a href="p5_graficos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos P5</a>
+            <a href="p6_grafico.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos P6</a>
+            <a href="p8_graficos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos P8</a>
+            <a href="creditos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Créditos</a>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold" data-aos="fade-down">Documentos del Proyecto</h1>
+            <p class="text-lg mt-2" data-aos="fade-up">Aquí puedes encontrar la documentación detallada de los ejercicios y recursos educativos del proyecto.</p>
+        </header>
+
+        <!-- Lista de Documentos -->
+        <section class="mb-12 bg-white p-6 rounded-lg shadow-md" data-aos="fade-right">
+            <h2 class="text-2xl font-bold mb-4">Recursos Educativos y Ejercicios</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li>
+                    <a href="assets/docs/recurso_educativo_12.pdf" target="_blank" class="text-blue-600 hover:underline">Recurso Educativo 12 (PDF)</a>: Guía paso a paso para simular un cubo OLAP usando Pentaho Data Integration (versión 8) y un archivo CSV. El ejercicio cubre las operaciones OLAP clave: Drill Down (profundizar de trimestre a mes), Roll Up (resumir de mes a trimestre), Slice (filtrar por un solo mes como Mayo) y Dice (filtrar por múltiples condiciones como mes, región y producto). Incluye instrucciones detalladas para configurar Pentaho Spoon y visualizar los resultados, así como una interpretación de cada operación.
+                </li>
+                <li>
+                    <a href="assets/docs/recurso_educativo_16.docx.pdf" target="_blank" class="text-blue-600 hover:underline">Recurso Educativo 16 (PDF)</a>: Guía práctica para crear un dashboard interactivo utilizando Chart.js, HTML y datos en formato JSON. El documento detalla cómo procesar datos de ventas y productos con Pentaho para generar un archivo JSON (`analisis_ventas.json`), y luego cómo visualizar los ingresos totales por categoría de producto en un gráfico de barras. Incluye el código HTML y JavaScript necesario para el dashboard, así como instrucciones para ejecutarlo usando un servidor local de Python.
+                </li>
+                <li>
+                    <a href="assets/docs/recurso_educativo_19.docx.pdf" target="_blank" class="text-blue-600 hover:underline">Recurso Educativo 19 (PDF)</a>: Guía paso a paso para construir un flujo ETL en Pentaho Spoon. El objetivo es leer un fact (ventas) y tres dimensiones (producto, cliente, tienda) desde archivos CSV, realizar uniones (joins) entre ellos sin necesidad de una base de datos, y generar datos agregados por año, mes y categoría de producto. El documento detalla el uso de pasos como Text file input, Sort rows, Merge Join, Modified Java Script Value para cálculos (sales_amount) y extracción de partes de la fecha, Group By para agregaciones, y Text file output para generar archivos CSV de salida. Incluye configuraciones clave y tips técnicos para evitar errores comunes.
+                </li>
+                <li>
+                    <a href="assets/docs/recurso_educativo_20.docx.pdf" target="_blank" class="text-blue-600 hover:underline">Recurso Educativo 20 (PDF)</a>: Guía paso a paso para poblar una base de datos HSQLDB local con datos de archivos CSV utilizando Pentaho Data Integration (PDI). El documento detalla la creación de una conexión a HSQLDB, la ejecución de scripts DDL para crear tablas de dimensiones (product_dim, store_dim, date_dim) y una tabla de hechos (sales_fact), y la carga de datos desde CSV a estas tablas. Además, incluye una serie de consultas SQL de ejemplo (básicas, intermedias con joins y agregaciones, y avanzadas de análisis tipo OLAP) para practicar la extracción y análisis de datos desde la base de datos poblada.
+                </li>
+                <li>
+                    <a href="assets/docs/recurso_educativo_26.docx.pdf" target="_blank" class="text-blue-600 hover:underline">Recurso Educativo 26 (PDF)</a>: Guía completa para realizar operaciones OLAP (Drill-down, Roll-up, Slice & Dice, Pivot) utilizando Pentaho Data Integration 7.1. El documento detalla la creación de archivos CSV de ejemplo (producto, tienda, fecha, venta), la configuración de una base de datos HSQLDB local con scripts SQL para crear tablas, y la carga de datos desde CSV. Para cada operación OLAP, se proporcionan consultas SQL de ejemplo y explicaciones sobre cómo implementarlas y analizarlas, utilizando un caso de estudio de ventas de una cadena de tiendas.
+                </li>
+                <li>
+                    <a href="assets/docs/recurso_educativo_30.docx.pdf" target="_blank" class="text-blue-600 hover:underline">Recurso Educativo 30 (PDF)</a>: Guía para simular un cubo OLAP utilizando archivos CSV y Pentaho Data Integration (PDI). El documento describe cómo diseñar un flujo ETL en Spoon para leer datos de ventas, clientes y productos desde archivos CSV, unirlos mediante pasos 'Join Rows', y luego agregar dimensiones y medidas utilizando un paso 'Group By' para simular consultas OLAP. Finalmente, se exportan los resultados agregados a un archivo CSV, que actúa como una 'vista OLAP' para análisis posteriores.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Repositorio en GitHub -->
+        <section class="text-center" data-aos="fade-up">
+            <h2 class="text-2xl font-bold mb-4">Repositorio del Proyecto</h2>
+            <p class="mb-4">Todo el código fuente, los flujos de Pentaho (archivos .ktr y .kjb) y la documentación del proyecto están disponibles en nuestro repositorio de GitHub.</p>
+            <a href="https://github.com/LuisCastilla071/Moto_Repuestos_Pentaho.git" target="_blank" class="navbar-bg text-white px-6 py-3 rounded-full hover:bg-gray-700 transition duration-300">
+                <i class="fab fa-github mr-2"></i>Ver Repositorio en GitHub
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 - Proyecto Académico de Bases de Datos Analíticas</p>
+            <p>Moto Repuestos Leyton</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

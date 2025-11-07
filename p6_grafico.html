@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moto Repuestos Leyton - Gráfico P6</title>
+    <meta name="description" content="Visualización de datos del proyecto Moto Repuestos Leyton a través de gráficos interactivos.">
+    <meta name="author" content="[Tu Nombre]">
+    <meta property="og:title" content="Moto Repuestos Leyton - Visualización de Datos">
+    <meta property="og:description" content="Gráficos interactivos que muestran el análisis de ventas y rendimiento de productos.">
+    <meta property="og:image" content="assets/img/og-image.png">
+    <meta property="og:url" content="[URL del sitio desplegado]/p6_grafico.html">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    
+    <!-- CDNs -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Estilos personalizados -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="navbar-bg p-4 text-white sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">Moto Repuestos Leyton</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="index.html" class="hover:text-gray-300">Inicio</a>
+                <a href="ejercicios.html" class="hover:text-gray-300">Ejercicios</a>
+                <div class="relative" x-data="{ open: false }">
+                    <a href="#" @click="open = !open" class="hover:text-gray-300">Gráficos <i class="fas fa-chevron-down text-xs"></i></a>
+                    <div x-show="open" @click.away="open = false" class="absolute left-0 mt-2 w-48 navbar-bg dropdown-menu rounded-md shadow-lg py-1 z-20">
+                        <a href="p5_graficos.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Gráficos P5</a>
+                        <a href="p6_grafico.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Gráficos P6</a>
+                        <a href="p8_graficos.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Gráficos P8</a>
+                    </div>
+                </div>
+                <a href="creditos.html" class="hover:text-gray-300">Créditos</a>
+            </div>
+            <button class="md:hidden" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="hidden md:hidden mt-2" id="mobile-menu">
+            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Inicio</a>
+            <a href="ejercicios.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Ejercicios</a>
+            <a href="p5_graficos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos P5</a>
+            <a href="p6_grafico.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos P6</a>
+            <a href="p8_graficos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos P8</a>
+            <a href="creditos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Créditos</a>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold" data-aos="fade-down">Ingresos Totales por Categoría de Producto (P6)</h1>
+            <p class="text-lg mt-2" data-aos="fade-up">Este dashboard muestra los resultados del proceso ETL realizado con Pentaho 7.1. Los datos de venta y producto fueron combinados para calcular los ingresos totales por categoría.</p>
+        </header>
+
+        <section class="mb-12 bg-white p-6 rounded-lg shadow-md" data-aos="fade-in">
+            <div class="w-full md:w-2/3 mx-auto">
+                <canvas id="ingresosPorCategoria"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 - Proyecto Académico de Bases de Datos Analíticas</p>
+            <p>Moto Repuestos Leyton</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/p6_graficos.js"></script>
+</body>
+</html>

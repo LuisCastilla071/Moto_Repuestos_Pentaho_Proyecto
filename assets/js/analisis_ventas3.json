@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "Monta_Venta": 25.5,
+            "nombre_tienda": "Ferreteria Central"
+        },
+        {
+            "Monta_Venta": 5.0,
+            "nombre_tienda": "Ferreteria Norte"
+        },
+        {
+            "Monta_Venta": 120.0,
+            "nombre_tienda": "Ferreteria Sur"
+        },
+        {
+            "Monta_Venta": 150.0,
+            "nombre_tienda": "Ferreteria Este"
+        }
+    ]
+}

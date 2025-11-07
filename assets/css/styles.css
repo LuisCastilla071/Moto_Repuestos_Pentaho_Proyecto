@@ -1,0 +1,51 @@
+/* Estilos personalizados para el proyecto Moto Repuestos Leyton */
+
+:root {
+    --color-primary: #A2D2FF; /* Light Blue */
+    --color-secondary: #BDE0FE; /* Lighter Blue */
+    --color-accent1: #FFC7EA; /* Pink */
+    --color-accent2: #FFD1DC; /* Light Pink */
+    --color-neutral: #F0F8FF; /* Alice Blue */
+    --color-navbar: #8D9EFF; /* Vibrant Lavender/Blue for Navbar */
+    --color-dropdown-bg: #7a8ce0; /* Slightly darker or complementary for dropdown */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Ejemplo de tipografía de Google Fonts */
+    background-color: var(--color-neutral); /* Aplicar color pastel al fondo */
+}
+
+/* Estilos para las secciones de gráficos */
+section {
+    background-color: white;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    padding: 1.5rem; /* p-6 */
+    margin-bottom: 3rem; /* mb-12 */
+}
+
+h1, h2, h3, h4 {
+    color: #333; /* Un color oscuro para el texto de los títulos */
+}
+
+.navbar-bg {
+    background-color: var(--color-navbar);
+}
+
+/* Dropdown specific styles */
+.dropdown-menu {
+    background-color: var(--color-dropdown-bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-out;
+}
+
+.dropdown-menu a {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Lighter hover for contrast */
+}
+
+/* Puedes agregar más estilos personalizados aquí */

@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "Cantidad_Venta": 1,
+            "categoria": "Herramientas"
+        },
+        {
+            "Cantidad_Venta": 10,
+            "categoria": "Abrasivos"
+        },
+        {
+            "Cantidad_Venta": 2,
+            "categoria": "Herramientas"
+        }
+    ]
+}
