@@ -31,14 +31,7 @@
             <div class="hidden md:flex space-x-4">
                 <a href="index.html" class="hover:text-gray-300">Inicio</a>
                 <a href="ejercicios.html" class="hover:text-gray-300">Ejercicios</a>
-                <div class="relative" x-data="{ open: false }">
-                    <a href="#" @click="open = !open" class="hover:text-gray-300">Gráficos <i class="fas fa-chevron-down text-xs"></i></a>
-                    <div x-show="open" @click.away="open = false" class="absolute left-0 mt-2 w-48 navbar-bg dropdown-menu rounded-md shadow-lg py-1 z-20">
-                        <a href="p5_graficos.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Gráficos P5</a>
-                        <a href="p6_grafico.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Gráficos P6</a>
-                        <a href="p8_graficos.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Gráficos P8</a>
-                    </div>
-                </div>
+                <a href="graficos.html" class="hover:text-gray-300">Gráficos</a>
                 <a href="creditos.html" class="hover:text-gray-300">Créditos</a>
             </div>
             <button class="md:hidden" id="mobile-menu-button">
@@ -48,20 +41,47 @@
         <div class="hidden md:hidden mt-2" id="mobile-menu">
             <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Inicio</a>
             <a href="ejercicios.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Ejercicios</a>
-            <a href="p5_graficos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos P5</a>
-            <a href="p6_grafico.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos P6</a>
-            <a href="p8_graficos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos P8</a>
+            <a href="graficos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos</a>
             <a href="creditos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Créditos</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="bg-cover bg-center h-96" style="background-image: url('https://via.placeholder.com/1500x600');">
-        <div class="container mx-auto h-full flex items-center justify-center">
-            <div class="text-center">
-                <h1 class="text-5xl font-bold mb-4 text-black" data-aos="fade-down">Análisis de Datos con Pentaho</h1>
-                <p class="text-xl text-black" data-aos="fade-up">Aplicado a la gestión de Moto Repuestos Leyton.</p>
+    <!-- Hero Section with Alpine.js Slider -->
+    <header x-data="{
+        activeSlide: 1,
+        slides: [2, 3, 4, 5, 6, 7, 8, 9],
+        loop() {
+            setInterval(() => {
+                this.activeSlide = this.activeSlide === this.slides.length ? 1 : this.activeSlide + 1
+            }, 2500)
+        }
+    }" x-init="loop" class="relative h-96">
+        <!-- Slides -->
+        <template x-for="(slide, index) in slides" :key="index">
+            <div x-show="activeSlide === index + 1" class="absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-500 ease-in-out"
+                 :style="'background-image: url(assets/img/' + slide + '.png)'">
+                 <div class="absolute inset-0 bg-black opacity-50"></div>
             </div>
+        </template>
+
+        <!-- Hero Text -->
+        <div class="relative container mx-auto h-full flex items-center justify-center">
+            <div class="text-center">
+                <h1 class="text-5xl font-bold mb-4 text-white" data-aos="fade-down">Análisis de Datos con Pentaho</h1>
+                <p class="text-xl text-white" data-aos="fade-up">Aplicado a la gestión de Moto Repuestos Leyton.</p>
+            </div>
+        </div>
+
+        <!-- Prev/Next Buttons -->
+        <div class="absolute inset-0 flex items-center justify-between p-4">
+            <button @click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1"
+                    class="bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button @click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1"
+                    class="bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </header>
 
@@ -73,21 +93,30 @@
             <p class="text-lg">Pentaho es una suite de Business Intelligence (BI) que proporciona una amplia gama de soluciones para el análisis de datos. Incluye herramientas para ETL (Extracción, Transformación y Carga), informes, cuadros de mando, minería de datos y más. Su naturaleza de código abierto la convierte en una opción popular para empresas de todos los tamaños.</p>
         </section>
 
-        <!-- Sección OLAP -->
-        <section id="olap" class="mb-12" data-aos="fade-left">
+        <!-- Sección Introducción a OLAP -->
+        <section id="olap-intro" class="mb-12" data-aos="fade-left">
             <h2 class="text-3xl font-bold mb-4">Cubos OLAP</h2>
             <p class="text-lg">Imagina que eres el analista de una cadena de retail y el gerente te pregunta: "¿Cuáles fueron las ventas totales de ropa deportiva para mujeres en la región Pacifico durante el primer trimestre del 2023, y cómo se compara con el mismo período del año anterior?"</p>
             <p class="text-lg">Responder esto con consultas SQL tradicionales sobre bases de datos transaccionales sería complejo, lento y resource-intensive. Los sistemas OLTP (Online Transaction Processing) están optimizados para muchas transacciones cortas (insert, update, delete), no para grandes consultas analíticas que requieren recorrer millones de registros.</p>
             <p class="text-lg">Es aquí donde entran en juego los Cubos OLAP. Un cubo OLAP es una estructura de datos multidimensional precalculada que permite el análisis rápido y intuitivo de información desde múltiples perspectivas. Es el corazón de los sistemas de Inteligencia de Negocios (BI) y Data Warehousing.</p>
+        </section>
 
-            <h3 class="text-2xl font-bold mt-8 mb-4">Analogía Pedagógica: El Cubo de Rubik de los Datos</h3>
+        <!-- Sección Analogía OLAP -->
+        <section id="olap-analogy" class="mb-12" data-aos="fade-right">
+            <h2 class="text-3xl font-bold mb-4">Analogía Pedagógica: El Cubo de Rubik de los Datos</h2>
             <p class="text-lg">Piensa en un cubo de Rubik. Tienes tres dimensiones principales: filas, columnas y caras. Girando el cubo, puedes reorganizar los colores y ver diferentes combinaciones. Un cubo OLAP es similar: en lugar de colores, tienes medidas (como Ventas o Cantidad) y puedes "girar" o "cortar" el cubo por sus dimensiones (como Tiempo, Producto o Ubicación) para visualizar instantáneamente los datos desde el ángulo que necesitas.</p>
+        </section>
 
-            <h3 class="text-2xl font-bold mt-8 mb-4">¿Qué es OLAP? Contexto y Definición</h3>
+        <!-- Sección Definición de OLAP -->
+        <section id="olap-definition" class="mb-12" data-aos="fade-left">
+            <h2 class="text-3xl font-bold mb-4">¿Qué es OLAP? Contexto y Definición</h2>
             <p class="text-lg">OLAP (Online Analytical Processing) es una tecnología que permite a los usuarios extraer y visualizar datos desde diferentes puntos de vista. El término fue acuñado por el Dr. E. F. Codd, el padre de las bases de datos relacionales, en 1993.</p>
             <p class="text-lg">La filosofía central de OLAP es la pre-agregación. Los cálculos pesados (sumas, promedios, conteos) se realizan con anticipación durante el proceso de carga del data warehouse (proceso ETL: Extract, Transform, Load). Esto significa que cuando un usuario hace una consulta, la respuesta es casi instantánea, ya que los datos ya están sumarizados y organizados para el análisis.</p>
+        </section>
 
-            <h3 class="text-2xl font-bold mt-8 mb-4">Modelos de Almacenamiento OLAP</h3>
+        <!-- Sección Modelos de Almacenamiento OLAP -->
+        <section id="olap-models" class="mb-12" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-4">Modelos de Almacenamiento OLAP</h2>
             <div class="overflow-x-auto rounded-lg shadow-md">
                 <table class="min-w-full bg-white border-collapse">
                     <thead class="navbar-bg text-white">
@@ -124,25 +153,31 @@
                     </tbody>
                 </table>
             </div>
+        </section>
 
-            <h3 class="text-2xl font-bold mt-8 mb-4">Anatomía de un Cubo OLAP: Hechos, Dimensiones y Métricas</h3>
+        <!-- Sección Anatomía de un Cubo OLAP -->
+        <section id="olap-anatomy" class="mb-12" data-aos="fade-right">
+            <h2 class="text-3xl font-bold mb-4">Anatomía de un Cubo OLAP: Hechos, Dimensiones y Métricas</h2>
             <p class="text-lg">Un cubo se construye a partir de dos tipos fundamentales de tablas:</p>
             <div class="ml-4">
-                <h4 class="text-xl font-semibold mt-4">Tabla de Hechos (Fact Table)</h4>
+                <h3 class="text-xl font-semibold mt-4">Tabla de Hechos (Fact Table)</h3>
                 <p>Es la tabla central de un cubo. Contiene las medidas o métricas cuantitativas del negocio que se desean analizar.</p>
                 <p><strong>Ejemplos:</strong> Ventas, Cantidad Vendida, Costo, Margen de Ganancia.</p>
                 <p><strong>Estructura:</strong> Está compuesta por claves foráneas que apuntan a las tablas de dimensiones y por las medidas en sí mismas.</p>
-                <h4 class="text-xl font-semibold mt-4">Tablas de Dimensiones (Dimension Tables)</h4>
+                <h3 class="text-xl font-semibold mt-4">Tablas de Dimensiones (Dimension Tables)</h3>
                 <p>Son tablas que contienen los atributos descriptivos que contextualizan los hechos. Proveen las "etiquetas" para analizar las medidas.</p>
                 <p><strong>Ejemplos:</strong> Dim_Tiempo, Dim_Producto, Dim_Cliente, Dim_Ubicacion.</p>
                 <p><strong>Estructura:</strong> Tienen una clave primaria (usualmente una clave sustituta o surrogate key) y varios atributos descriptivos (e.g., Nombre_Producto, Categoria, Marca).</p>
-                <h4 class="text-xl font-semibold mt-4">Jerarquías (Hierarchies)</h4>
+                <h3 class="text-xl font-semibold mt-4">Jerarquías (Hierarchies)</h3>
                 <p>Dentro de una dimensión, los atributos suelen organizarse en jerarquías para permitir diferentes niveles de análisis.</p>
                 <p><strong>Ejemplo en Dim_Tiempo:</strong> Año -> Trimestre -> Mes -> Dia</p>
                 <p><strong>Ejemplo en Dim_Ubicacion:</strong> Pais -> Region -> Ciudad -> Tienda</p>
             </div>
+        </section>
 
-            <h3 class="text-2xl font-bold mt-8 mb-4">Operaciones Fundamentales en un Cubo OLAP</h3>
+        <!-- Sección Operaciones Fundamentales en un Cubo OLAP -->
+        <section id="olap-operations" class="mb-12" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-4">Operaciones Fundamentales en un Cubo OLAP</h2>
             <div class="overflow-x-auto rounded-lg shadow-md">
                 <table class="min-w-full bg-white border-collapse">
                     <thead class="navbar-bg text-white">
@@ -187,8 +222,11 @@
                     </tbody>
                 </table>
             </div>
+        </section>
 
-            <h3 class="text-2xl font-bold mt-8 mb-4">Administración y Explotación en la Nube (Cloud Computing)</h3>
+        <!-- Sección Cloud Computing -->
+        <section id="olap-cloud" class="mb-12" data-aos="fade-left">
+            <h2 class="text-3xl font-bold mb-4">Administración y Explotación en la Nube (Cloud Computing)</h2>
             <p class="text-lg">Administrar un Data Warehouse y sus cubos OLAP on-premise (en servidores locales) implica grandes costos iniciales en hardware, licencias de software, y un equipo especializado para el mantenimiento, escalado y seguridad.</p>
             <p class="text-lg">La tendencia absoluta es migrar estas cargas analíticas a la nube debido a sus ventajas abrumadoras:</p>
             <ul class="list-disc list-inside ml-4">
@@ -198,55 +236,55 @@
                 <li><strong>Integración de Servicios:</strong> Facilita la creación de un ecosistema completo de datos: ingestión (Dataflow), almacenamiento (Cloud Storage), procesamiento (Dataproc), warehousing (BigQuery), y visualización (Looker, Tableau Online).</li>
                 <li><strong>Acceso y Colaboración:</strong> Los datos y los dashboards están disponibles de forma segura desde cualquier lugar del mundo, facilitando el trabajo remoto y la colaboración.</li>
             </ul>
+        </section>
 
-            <h3 class="text-2xl font-bold mt-8 mb-4">Ejercicios de Aplicación y Reflexión</h3>
+        <!-- Sección Ejercicios de Aplicación -->
+        <section id="olap-exercises" class="mb-12" data-aos="fade-right">
+            <h2 class="text-3xl font-bold mb-4">Ejercicios de Aplicación y Reflexión</h2>
             <div class="ml-4">
-                <h4 class="text-xl font-semibold mt-4">Ejercicio 1: Diseño Conceptual</h4>
+                <h3 class="text-xl font-semibold mt-4">Ejercicio 1: Diseño Conceptual</h3>
                 <p>Imagine que trabaja para una plataforma de streaming (e.g., "SistemaFlix").</p>
                 <ul class="list-disc list-inside">
                     <li>Identifique al menos 3 métricas clave (para la tabla de hechos).</li>
                     <li>Identifique al menos 4 dimensiones clave y proponga 2 atributos para cada una.</li>
                     <li>Dibuje el esquema en estrella resultante.</li>
                 </ul>
-                <h4 class="text-xl font-semibold mt-4">Ejercicio 2: Operaciones OLAP</h4>
+                <h3 class="text-xl font-semibold mt-4">Ejercicio 2: Operaciones OLAP</h3>
                 <p>Con base en el cubo de "SistemaFlix" que diseñó:</p>
                 <ul class="list-disc list-inside">
                     <li>Escriba un ejemplo de operación Slice.</li>
                     <li>Escriba un ejemplo de operación Dice.</li>
                     <li>Defina una jerarquía para la dimensión Tiempo y escriba un ejemplo de Drill-Down sobre ella.</li>
                 </ul>
-                <h4 class="text-xl font-semibold mt-4">Ejercicio 3: Análisis Crítico</h4>
+                <h3 class="text-xl font-semibold mt-4">Ejercicio 3: Análisis Crítico</h3>
                 <p>Usted debe convencer al director financiero de migrar el data warehouse on-premise de la empresa a la nube.</p>
                 <ul class="list-disc list-inside">
                     <li>Elabore una lista de tus 3 argumentos principales enfocados en los beneficios económicos (CAPEX vs OPEX).</li>
                     <li>Menciona una posible desventaja o preocupación que podría tener el director (e.g., seguridad, dependencia del proveedor) y cómo la mitigarías.</li>
                 </ul>
             </div>
+        </section>
 
-            <h3 class="text-2xl font-bold mt-8 mb-4">Conclusión Integradora</h3>
+        <!-- Sección Conclusión Integradora -->
+        <section id="olap-conclusion" class="mb-12" data-aos="fade-left">
+            <h2 class="text-3xl font-bold mb-4">Conclusión Integradora</h2>
             <p class="text-lg">Los cubos OLAP son mucho más que un concepto técnico; son la materialización de una necesidad empresarial: transformar datos crudos en información accionable de forma rápida e intuitiva. Al dominar su estructura (hechos, dimensiones, métricas), sus operaciones fundamentales (slice, dice, drill-down/roll-up, pivot) y los modelos de almacenamiento (MOLAP, ROLAP, HOLAP), usted adquiere la capacidad de diseñar sistemas de análisis que responden a las preguntas complejas del negocio.</p>
             <p class="text-lg">Hoy, este poder analítico se democratiza y potencia a través del cloud computing. Plataformas como Google BigQuery, Azure Synapse Analytics o Amazon Redshift abstracten la complejidad de la administración, permitiéndole enfocarse en lo más importante: extraer insights valiosos que guíen la toma de decisiones estratégicas. Usted, como futuro ingeniero, no solo debe entender cómo funcionan estos sistemas, sino también cómo aprovechar las mejores plataformas disponibles para implementarlos de manera eficiente y escalable.</p>
+        </section>
 
-            <h3 class="text-2xl font-bold mt-8 mb-4">Sugerencias para Profundizar</h3>
+        <!-- Sección Sugerencias para Profundizar -->
+        <section id="olap-deepen" class="mb-12" data-aos="fade-right">
+            <h2 class="text-3xl font-bold mb-4">Sugerencias para Profundizar</h2>
             <ul class="list-disc list-inside ml-4">
                 <li><strong>Práctica con Herramientas:</strong> Explora las versiones gratuitas o trials de Microsoft Power BI Desktop (para crear modelos tabulares/cubos) y conéctalo a un data warehouse en la nube como Google BigQuery, que ofrece un tier gratuito generoso.</li>
                 <li><strong>Lectura Avanzada:</strong> Investiga sobre el lenguaje MDX (Multidimensional Expressions), el estándar para consultar cubos OLAP (similar a SQL pero para datos multidimensionales).</li>
                 <li><strong>Patrones de Diseño:</strong> Profundiza en las diferencias entre el Esquema en Copo de Nieve (Snowflake Schema) y el Esquema en Estrella, y cuándo usar cada uno.</li>
                 <li><strong>Tendencias:</strong> Investiga sobre el concepto "OLAP sobre Data Lakes" con tecnologías como Apache Druid o ClickHouse, que buscan ofrecer latencia muy baja sobre datos semi-estructurados.</li>
             </ul>
-
-            <h3 class="text-2xl font-bold mt-8 mb-4">Bibliografía</h3>
-            <ul class="list-disc list-inside ml-4">
-                <li>Kimball, R., & Ross, M. (2013). The Data Warehouse Toolkit: The Definitive Guide to Dimensional Modeling (3rd ed.). John Wiley & Sons.</li>
-                <li>Inmon, W. H. (2005). Building the Data Warehouse (4th ed.). John Wiley & Sons.</li>
-                <li>Chaudhuri, S., & Dayal, U. (1997). An overview of data warehousing and OLAP technology. ACM Sigmod Record, 26(1), 65-74. https://doi.org/10.1145/248603.248616</li>
-                <li>Google Cloud. (2023). What is a data warehouse?. Google Cloud. Retrieved from https://cloud.google.com/learn/what-is-a-data-warehouse</li>
-                <li>Microsoft Learn. (2023). Online Analytical Processing (OLAP). Retrieved from https://learn.microsoft.com/en-us/analysis-services/olap/olap?view=asallproducts-allversions</li>
-            </ul>
         </section>
 
         <!-- Sección ETL -->
-        <section id="etl" class="mb-12" data-aos="fade-right">
+        <section id="etl" class="mb-12" data-aos="fade-left">
             <h2 class="text-3xl font-bold mb-4">Flujos de Datos (ETL)</h2>
             <p class="text-lg">Los procesos de Extracción, Transformación y Carga (ETL) son fundamentales para la inteligencia de negocios. Con Pentaho Data Integration (PDI), diseñamos flujos de trabajo que extraen datos de diversas fuentes (como bases de datos transaccionales y archivos CSV), los transforman para limpiarlos y estandarizarlos, y finalmente los cargan en nuestro data warehouse para su posterior análisis a través de los cubos OLAP.</p>
         </section>
@@ -262,6 +300,7 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

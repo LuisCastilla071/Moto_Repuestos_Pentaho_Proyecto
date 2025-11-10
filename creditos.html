@@ -31,14 +31,7 @@
             <div class="hidden md:flex space-x-4">
                 <a href="index.html" class="hover:text-gray-300">Inicio</a>
                 <a href="ejercicios.html" class="hover:text-gray-300">Ejercicios</a>
-                <div class="relative" x-data="{ open: false }">
-                    <a href="#" @click="open = !open" class="hover:text-gray-300">Gráficos <i class="fas fa-chevron-down text-xs"></i></a>
-                    <div x-show="open" @click.away="open = false" class="absolute left-0 mt-2 w-48 navbar-bg dropdown-menu rounded-md shadow-lg py-1 z-20">
-                        <a href="p5_graficos.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Gráficos P5</a>
-                        <a href="p6_grafico.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Gráficos P6</a>
-                        <a href="p8_graficos.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Gráficos P8</a>
-                    </div>
-                </div>
+                <a href="graficos.html" class="hover:text-gray-300">Gráficos</a>
                 <a href="creditos.html" class="hover:text-gray-300">Créditos</a>
             </div>
             <button class="md:hidden" id="mobile-menu-button">
@@ -48,9 +41,7 @@
         <div class="hidden md:hidden mt-2" id="mobile-menu">
             <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Inicio</a>
             <a href="ejercicios.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Ejercicios</a>
-            <a href="p5_graficos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos P5</a>
-            <a href="p6_grafico.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos P6</a>
-            <a href="p8_graficos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos P8</a>
+            <a href="graficos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos</a>
             <a href="creditos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Créditos</a>
         </div>
     </nav>
@@ -78,9 +69,8 @@
                     <h3 class="text-lg font-semibold mt-4">Profesor:</h3>
                     <p class="text-gray-600">Jonathan Jose Moreno Castro</p>
                     <div class="mt-4">
-                        <!-- Puedes añadir enlaces a GitHub o LinkedIn del equipo si los tienes -->
-                        <!-- <a href="#" class="text-gray-800 hover:text-blue-500 mx-2"><i class="fab fa-github"></i></a> -->
-                        <!-- <a href="#" class="text-gray-800 hover:text-blue-500 mx-2"><i class="fab fa-linkedin"></i></a> -->
+                        <a href="https://github.com/LuisCastilla071" target="_blank" class="text-gray-800 hover:text-blue-500 mx-2 text-xl font-bold"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://wa.me/50586538380" target="_blank" class="text-gray-800 hover:text-green-500 mx-2 text-xl font-bold"><i class="fab fa-whatsapp"></i> ¡CONTACTANOS!</a>
                     </div>
                 </div>
             </div>
@@ -104,6 +94,7 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

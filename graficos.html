@@ -1,18 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moto Repuestos Leyton - Gráficos</title>
-    <meta name="description" content="Visualización de datos del proyecto Moto Repuestos Leyton a través de gráficos interactivos.">
-    <meta name="author" content="[Tu Nombre]">
+    <title>Moto Repuestos Leyton - Visualización de Datos</title>
+    <meta name="description" content="Índice de visualizaciones de datos y gráficos interactivos del proyecto Moto Repuestos Leyton.">
+    <meta name="author" content="Equipo de Desarrollo Moto Repuestos Leyton">
     <meta property="og:title" content="Moto Repuestos Leyton - Visualización de Datos">
-    <meta property="og:description" content="Gráficos interactivos que muestran el análisis de ventas y rendimiento de productos.">
+    <meta property="og:description" content="Índice de gráficos interactivos que muestran el análisis de ventas y rendimiento de productos.">
     <meta property="og:image" content="assets/img/og-image.png">
     <meta property="og:url" content="[URL del sitio desplegado]/graficos.html">
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- CDNs -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -54,26 +58,41 @@
             <a href="creditos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Créditos</a>
         </div>
     </nav>
+
     <!-- Contenido Principal -->
     <main class="container mx-auto p-8">
         <header class="text-center mb-12">
-            <h1 class="text-4xl font-bold" data-aos="fade-down">Galería de Gráficos</h1>
-            <p class="text-lg mt-2" data-aos="fade-up">Selecciona el conjunto de gráficos que deseas visualizar.</p>
+            <h1 class="text-4xl font-bold" data-aos="fade-down">Visualización de Datos</h1>
+            <p class="text-lg mt-2" data-aos="fade-up">Selecciona una práctica para ver los gráficos correspondientes.</p>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <a href="p5_graficos.html" class="block bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow" data-aos="zoom-in">
-                <h2 class="text-2xl font-bold mb-4">Gráficos P5</h2>
-                <p>Visualización de ventas por mes, categoría y tienda.</p>
-            </a>
-            <a href="p6_grafico.html" class="block bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow" data-aos="zoom-in">
-                <h2 class="text-2xl font-bold mb-4">Gráficos P6</h2>
-                <p>Visualización de ingresos totales por categoría de producto.</p>
-            </a>
-            <a href="p8_graficos.html" class="block bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow" data-aos="zoom-in">
-                <h2 class="text-2xl font-bold mb-4">Gráficos P8</h2>
-                <p>Visualización de ventas por producto, ingresos por ciudad y total de ventas por producto.</p>
-            </a>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card P5 -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300" data-aos="fade-up">
+                <h2 class="text-2xl font-bold mb-4">Práctica 5</h2>
+                <p class="mb-4">Análisis de ventas por mes, categoría de producto y tienda.</p>
+                <a href="p5_graficos.html" class="inline-block navbar-bg text-white px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300">
+                    Ver Gráficos <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Card P6 -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="text-2xl font-bold mb-4">Práctica 6</h2>
+                <p class="mb-4">Cálculo de ingresos totales por categoría de producto.</p>
+                <a href="p6_grafico.html" class="inline-block navbar-bg text-white px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300">
+                    Ver Gráfico <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Card P8 -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="text-2xl font-bold mb-4">Práctica 8</h2>
+                <p class="mb-4">Análisis de ventas por producto e ingresos por ciudad.</p>
+                <a href="p8_graficos.html" class="inline-block navbar-bg text-white px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300">
+                    Ver Gráficos <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
         </div>
     </main>
 
@@ -86,9 +105,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/graficos.js"></script>
 </body>
 </html>
