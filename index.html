@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Moto Repuestos Leyton - Inicio</title>
     <meta name="description" content="Proyecto académico sobre Bases de Datos Analíticas con Pentaho, aplicado a la empresa Moto Repuestos Leyton.">
     <meta name="author" content="Equipo de Desarrollo">
@@ -127,37 +127,37 @@
         <!-- Sección Modelos de Almacenamiento OLAP -->
         <section id="olap-models" class="mb-12" data-aos="fade">
                 <div class="overflow-x-auto rounded-lg shadow-md">
-                    <table class="min-w-full w-max bg-white border-collapse">
+                    <table class="min-w-full w-max bg-white border-collapse text-sm">
                         <thead class="navbar-bg text-white">
                             <tr>
-                                <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Modelo</th>
-                                <th class="w-1/2 py-3 px-5 text-left border-b border-gray-700">Descripción</th>
-                                <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Ventajas</th>
-                                <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Desventajas</th>
-                                <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Herramientas/Plataformas</th>
+                                <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Modelo</th>
+                                <th class="w-1/2 py-1 px-2 text-left border-b border-gray-700">Descripción</th>
+                                <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Ventajas</th>
+                                <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Desventajas</th>
+                                <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Herramientas/Plataformas</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="border-b border-gray-200 hover:bg-gray-50">
-                                <td class="py-3 px-5">MOLAP (Multidimensional OLAP)</td>
-                                <td class="py-3 px-5">Almacena los datos en una estructura multidimensional optimizada y propietaria (no en una BD relacional).</td>
-                                <td class="py-3 px-5">Rendimiento muy alto. Consultas extremadamente rápidas. Optimizado para operaciones OLAP.</td>
-                                <td class="py-3 px-5">Volumen de datos limitado. Proceso de carga (procesamiento del cubo) puede ser lento.</td>
-                                <td class="py-3 px-5">Microsoft Analysis Services (Tabular mode), Oracle Essbase, SAP BW</td>
+                                <td class="py-1 px-2">MOLAP (Multidimensional OLAP)</td>
+                                <td class="py-1 px-2">Almacena los datos en una estructura multidimensional optimizada y propietaria (no en una BD relacional).</td>
+                                <td class="py-1 px-2">Rendimiento muy alto. Consultas extremadamente rápidas. Optimizado para operaciones OLAP.</td>
+                                <td class="py-1 px-2">Volumen de datos limitado. Proceso de carga (procesamiento del cubo) puede ser lento.</td>
+                                <td class="py-1 px-2">Microsoft Analysis Services (Tabular mode), Oracle Essbase, SAP BW</td>
                             </tr>
                             <tr class="border-b border-gray-200 hover:bg-gray-50">
-                                <td class="py-3 px-5">ROLAP (Relational OLAP)</td>
-                                <td class="py-3 px-5">Utiliza la base de datos relacional existente del data warehouse. Las dimensiones y hechos son tablas. Las agregaciones se pueden precalcular en tablas de resumen.</td>
-                                <td class="py-3 px-5">Escalabilidad. Maneja grandes volúmenes de datos. Mayor flexibilidad.</td>
-                                <td class="py-3 px-5">Rendimiento generalmente menor que MOLAP. Las consultas SQL pueden volverse muy complejas.</td>
-                                <td class="py-3 px-5">Google BigQuery, Amazon Redshift, Snowflake, Microsoft Analysis Services (con modo ROLAP)</td>
+                                <td class="py-1 px-2">ROLAP (Relational OLAP)</td>
+                                <td class="py-1 px-2">Utiliza la base de datos relacional existente del data warehouse. Las dimensiones y hechos son tablas. Las agregaciones se pueden precalcular en tablas de resumen.</td>
+                                <td class="py-1 px-2">Escalabilidad. Maneja grandes volúmenes de datos. Mayor flexibilidad.</td>
+                                <td class="py-1 px-2">Rendimiento generalmente menor que MOLAP. Las consultas SQL pueden volverse muy complejas.</td>
+                                <td class="py-1 px-2">Google BigQuery, Amazon Redshift, Snowflake, Microsoft Analysis Services (con modo ROLAP)</td>
                             </tr>
                             <tr class="hover:bg-gray-50">
-                                <td class="py-3 px-5">HOLAP (Hybrid OLAP)</td>
-                                <td class="py-3 px-5">Combina MOLAP y ROLAP. Almacena los datos detallados en la BD relacional (ROLAP) y las agregaciones en la estructura multidimensional (MOLAP).</td>
-                                <td class="py-3 px-5">Equilibrio entre rendimiento y escalabilidad.</td>
-                                <td class="py-3 px-5">Mayor complejidad en la administración.</td>
-                                <td class="py-3 px-5">Microsoft Analysis Services (es un ejemplo clásico), IBM Cognos</td>
+                                <td class="py-1 px-2">HOLAP (Hybrid OLAP)</td>
+                                <td class="py-1 px-2">Combina MOLAP y ROLAP. Almacena los datos detallados en la BD relacional (ROLAP) y las agregaciones en la estructura multidimensional (MOLAP).</td>
+                                <td class="py-1 px-2">Equilibrio entre rendimiento y escalabilidad.</td>
+                                <td class="py-1 px-2">Mayor complejidad en la administración.</td>
+                                <td class="py-1 px-2">Microsoft Analysis Services (es un ejemplo clásico), IBM Cognos</td>
                             </tr>
                         </tbody>
                     </table>
@@ -189,45 +189,45 @@
         <section id="olap-operations" class="mb-12" data-aos="fade">
             <h2 class="text-3xl font-bold mb-4">Operaciones Fundamentales en un Cubo OLAP</h2>
             <div class="overflow-x-auto rounded-lg shadow-md">
-                <table class="min-w-full w-max bg-white border-collapse">
+                <table class="min-w-full w-max bg-white border-collapse text-sm">
                     <thead class="navbar-bg text-white">
                         <tr>
-                            <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Operación</th>
-                            <th class="w-1/2 py-3 px-5 text-left border-b border-gray-700">Descripción</th>
-                            <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Analogía</th>
-                            <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Ejemplo</th>
+                            <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Operación</th>
+                            <th class="w-1/2 py-1 px-2 text-left border-b border-gray-700">Descripción</th>
+                            <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Analogía</th>
+                            <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Ejemplo</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-5">Slice (Corte)</td>
-                            <td class="py-3 px-5">Seleccionar una sola dimensión, creando un subcubo de dimensión N-1.</td>
-                            <td class="py-3 px-5">Cortar un cubo 3D para obtener un cuadrado 2D.</td>
-                            <td class="py-3 px-5">"Mostrar todas las ventas para Q1 2023" (se fija la dimensión Tiempo).</td>
+                            <td class="py-1 px-2">Slice (Corte)</td>
+                            <td class="py-1 px-2">Seleccionar una sola dimensión, creando un subcubo de dimensión N-1.</td>
+                            <td class="py-1 px-2">Cortar un cubo 3D para obtener un cuadrado 2D.</td>
+                            <td class="py-1 px-2">"Mostrar todas las ventas para Q1 2023" (se fija la dimensión Tiempo).</td>
                         </tr>
                         <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-5">Dice (Dado)</td>
-                            <td class="py-3 px-5">Seleccionar un subconjunto de valores en múltiples dimensiones. El cubo resultante tiene las mismas dimensiones.</td>
-                            <td class="py-3 px-5">Cortar un cubo para obtener un cubo más pequeño.</td>
-                            <td class="py-3 px-5">"Ventas de Ropa Deportiva en la Región Pacifico durante Q1 2023".</td>
+                            <td class="py-1 px-2">Dice (Dado)</td>
+                            <td class="py-1 px-2">Seleccionar un subconjunto de valores en múltiples dimensiones. El cubo resultante tiene las mismas dimensiones.</td>
+                            <td class="py-1 px-2">Cortar un cubo para obtener un cubo más pequeño.</td>
+                            <td class="py-1 px-2">"Ventas de Ropa Deportiva en la Región Pacifico durante Q1 2023".</td>
                         </tr>
                         <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-5">Drill-Down (Profundizar)</td>
-                            <td class="py-3 px-5">Navegar de un nivel de resumen a un nivel más detallado dentro de una jerarquía.</td>
-                            <td class="py-3 px-5">Hacer zoom en un mapa.</td>
-                            <td class="py-3 px-5">De "Ventas por Año" -> "Ventas por Trimestre de 2023" -> "Ventas por Mes de Q1 2023".</td>
+                            <td class="py-1 px-2">Drill-Down (Profundizar)</td>
+                            <td class="py-1 px-2">Navegar de un nivel de resumen a un nivel más detallado dentro de una jerarquía.</td>
+                            <td class="py-1 px-2">Hacer zoom en un mapa.</td>
+                            <td class="py-1 px-2">De "Ventas por Año" -> "Ventas por Trimestre de 2023" -> "Ventas por Mes de Q1 2023".</td>
                         </tr>
                         <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-5">Roll-Up (Summarize)</td>
-                            <td class="py-3 px-5">Lo opuesto a Drill-Down. Consolidar datos a un nivel más alto de resumen.</td>
-                            <td class="py-3 px-5">Alejar el zoom de un mapa.</td>
-                            <td class="py-3 px-5">De "Ventas por Mes" -> "Ventas por Trimestre" -> "Ventas por Año".</td>
+                            <td class="py-1 px-2">Roll-Up (Summarize)</td>
+                            <td class="py-1 px-2">Lo opuesto a Drill-Down. Consolidar datos a un nivel más alto de resumen.</td>
+                            <td class="py-1 px-2">Alejar el zoom de un mapa.</td>
+                            <td class="py-1 px-2">De "Ventas por Mes" -> "Ventas por Trimestre" -> "Ventas por Año".</td>
                         </tr>
                         <tr class="hover:bg-gray-50">
-                            <td class="py-3 px-5">Pivot (Rotar)</td>
-                            <td class="py-3 px-5">Rotar el eje de visualización de los datos para cambiar la perspectiva.</td>
-                            <td class="py-3 px-5">Girar el cubo de Rubik.</td>
-                            <td class="py-3 px-5">Cambiar la visualización de "Ventas por Producto y Tiempo" a "Ventas por Tiempo y Ubicación".</td>
+                            <td class="py-1 px-2">Pivot (Rotar)</td>
+                            <td class="py-1 px-2">Rotar el eje de visualización de los datos para cambiar la perspectiva.</td>
+                            <td class="py-1 px-2">Girar el cubo de Rubik.</td>
+                            <td class="py-1 px-2">Cambiar la visualización de "Ventas por Producto y Tiempo" a "Ventas por Tiempo y Ubicación".</td>
                         </tr>
                     </tbody>
                 </table>
