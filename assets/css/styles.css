@@ -1,3 +1,5 @@
+html { height: 100%; overflow-y: scroll; }
+
 /* Estilos personalizados para el proyecto Moto Repuestos Leyton */
 
 :root {
@@ -50,8 +52,3 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Puedes agregar más estilos personalizados aquí */
-
-[data-aos] {
-    opacity: 0;
-    transition-property: opacity, transform; /* Asegura la transición para opacidad y transformación */
-}

@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moto Repuestos Leyton - Inicio</title>
     <meta name="description" content="Proyecto académico sobre Bases de Datos Analíticas con Pentaho, aplicado a la empresa Moto Repuestos Leyton.">
-    <meta name="author" content="[Tu Nombre]">
+    <meta name="author" content="Equipo de Desarrollo">
     <meta property="og:title" content="Moto Repuestos Leyton - Proyecto Pentaho">
     <meta property="og:description" content="Sitio web académico que demuestra el uso de Pentaho para análisis de datos en una empresa de repuestos de motocicletas.">
     <meta property="og:image" content="assets/img/og-image.png">
-    <meta property="og:url" content="[URL del sitio desplegado]">
+    <meta property="og:url" content="index.html">
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     
     <!-- CDNs -->
@@ -28,7 +27,7 @@
     <nav class="navbar-bg p-4 text-white sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold">Moto Repuestos Leyton</a>
-            <div class="hidden md:flex space-x-4">
+            <div class="hidden md:flex space-x-4 text-lg">
                 <a href="index.html" class="hover:text-gray-300">Inicio</a>
                 <a href="ejercicios.html" class="hover:text-gray-300">Ejercicios</a>
                 <a href="graficos.html" class="hover:text-gray-300">Gráficos</a>
@@ -39,10 +38,10 @@
             </button>
         </div>
         <div class="hidden md:hidden mt-2" id="mobile-menu">
-            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Inicio</a>
-            <a href="ejercicios.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Ejercicios</a>
-            <a href="graficos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos</a>
-            <a href="creditos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Créditos</a>
+            <a href="index.html" class="block py-2 px-4 text-lg hover:bg-gray-700">Inicio</a>
+            <a href="ejercicios.html" class="block py-2 px-4 text-lg hover:bg-gray-700">Ejercicios</a>
+            <a href="graficos.html" class="block py-2 px-4 text-lg hover:bg-gray-700">Gráficos</a>
+            <a href="creditos.html" class="block py-2 px-4 text-lg hover:bg-gray-700">Créditos</a>
         </div>
     </nav>
 
@@ -67,8 +66,8 @@
         <!-- Hero Text -->
         <div class="relative container mx-auto h-full flex items-center justify-center">
             <div class="text-center">
-                <h1 class="text-5xl font-bold mb-4 text-white" data-aos="fade-down">Análisis de Datos con Pentaho</h1>
-                <p class="text-xl text-white" data-aos="fade-up">Aplicado a la gestión de Moto Repuestos Leyton.</p>
+                <h1 class="text-5xl font-bold mb-4 text-white" data-aos="fade">Análisis de Datos con Pentaho</h1>
+                <p class="text-xl text-white" data-aos="fade">Aplicado a la gestión de Moto Repuestos Leyton.</p>
             </div>
         </div>
 
@@ -78,13 +77,13 @@
     <!-- Contenido Principal -->
     <main class="container mx-auto pt-4 overflow-x-hidden">
         <!-- Sección Pentaho -->
-        <section id="pentaho" class="mb-12" data-aos="fade-right">
+        <section id="pentaho" class="mb-12" data-aos="fade">
             <h2 class="text-3xl font-bold mb-4">¿Qué es Pentaho?</h2>
             <p class="text-lg">Pentaho es una suite de Business Intelligence (BI) que proporciona una amplia gama de soluciones para el análisis de datos. Incluye herramientas para ETL (Extracción, Transformación y Carga), informes, cuadros de mando, minería de datos y más. Su naturaleza de código abierto la convierte en una opción popular para empresas de todos los tamaños.</p>
         </section>
 
         <!-- Sección Introducción a OLAP -->
-        <section id="olap-intro" class="mb-12" data-aos="fade-left">
+        <section id="olap-intro" class="mb-12" data-aos="fade">
             <h2 class="text-3xl font-bold mb-4">Cubos OLAP</h2>
             <div class="flex flex-col md:flex-row-reverse items-center">
                 <div class="md:w-2/3 md:pl-8">
@@ -99,7 +98,7 @@
         </section>
 
         <!-- Sección Analogía OLAP -->
-        <section id="olap-analogy" class="mb-12" data-aos="fade-right">
+        <section id="olap-analogy" class="mb-12" data-aos="fade">
             <h2 class="text-3xl font-bold mb-4">Analogía Pedagógica: El Cubo de Rubik de los Datos</h2>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-2/3 md:pr-8">
@@ -112,7 +111,7 @@
         </section>
 
         <!-- Sección Definición de OLAP -->
-        <section id="olap-definition" class="mb-12" data-aos="fade-left">
+        <section id="olap-definition" class="mb-12" data-aos="fade">
             <h2 class="text-3xl font-bold mb-4">¿Qué es OLAP? Contexto y Definición</h2>
             <div class="flex flex-col md:flex-row-reverse items-center">
                 <div class="md:w-2/3 md:pl-8">
@@ -126,48 +125,47 @@
         </section>
 
         <!-- Sección Modelos de Almacenamiento OLAP -->
-        <section id="olap-models" class="mb-12" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-4">Modelos de Almacenamiento OLAP</h2>
-            <div class="overflow-x-auto rounded-lg shadow-md">
-                <table class="min-w-full bg-white border-collapse">
-                    <thead class="navbar-bg text-white">
-                        <tr>
-                            <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Modelo</th>
-                            <th class="w-1/2 py-3 px-5 text-left border-b border-gray-700">Descripción</th>
-                            <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Ventajas</th>
-                            <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Desventajas</th>
-                            <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Herramientas/Plataformas</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-5">MOLAP (Multidimensional OLAP)</td>
-                            <td class="py-3 px-5">Almacena los datos en una estructura multidimensional optimizada y propietaria (no en una BD relacional).</td>
-                            <td class="py-3 px-5">Rendimiento muy alto. Consultas extremadamente rápidas. Optimizado para operaciones OLAP.</td>
-                            <td class="py-3 px-5">Volumen de datos limitado. Proceso de carga (procesamiento del cubo) puede ser lento.</td>
-                            <td class="py-3 px-5">Microsoft Analysis Services (Tabular mode), Oracle Essbase, SAP BW</td>
-                        </tr>
-                        <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-5">ROLAP (Relational OLAP)</td>
-                            <td class="py-3 px-5">Utiliza la base de datos relacional existente del data warehouse. Las dimensiones y hechos son tablas. Las agregaciones se pueden precalcular en tablas de resumen.</td>
-                            <td class="py-3 px-5">Escalabilidad. Maneja grandes volúmenes de datos. Mayor flexibilidad.</td>
-                            <td class="py-3 px-5">Rendimiento generalmente menor que MOLAP. Las consultas SQL pueden volverse muy complejas.</td>
-                            <td class="py-3 px-5">Google BigQuery, Amazon Redshift, Snowflake, Microsoft Analysis Services (con modo ROLAP)</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="py-3 px-5">HOLAP (Hybrid OLAP)</td>
-                            <td class="py-3 px-5">Combina MOLAP y ROLAP. Almacena los datos detallados en la BD relacional (ROLAP) y las agregaciones en la estructura multidimensional (MOLAP).</td>
-                            <td class="py-3 px-5">Equilibrio entre rendimiento y escalabilidad.</td>
-                            <td class="py-3 px-5">Mayor complejidad en la administración.</td>
-                            <td class="py-3 px-5">Microsoft Analysis Services (es un ejemplo clásico), IBM Cognos</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <section id="olap-models" class="mb-12" data-aos="fade">
+                <div class="overflow-x-auto rounded-lg shadow-md">
+                    <table class="min-w-full w-max bg-white border-collapse">
+                        <thead class="navbar-bg text-white">
+                            <tr>
+                                <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Modelo</th>
+                                <th class="w-1/2 py-3 px-5 text-left border-b border-gray-700">Descripción</th>
+                                <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Ventajas</th>
+                                <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Desventajas</th>
+                                <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Herramientas/Plataformas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-5">MOLAP (Multidimensional OLAP)</td>
+                                <td class="py-3 px-5">Almacena los datos en una estructura multidimensional optimizada y propietaria (no en una BD relacional).</td>
+                                <td class="py-3 px-5">Rendimiento muy alto. Consultas extremadamente rápidas. Optimizado para operaciones OLAP.</td>
+                                <td class="py-3 px-5">Volumen de datos limitado. Proceso de carga (procesamiento del cubo) puede ser lento.</td>
+                                <td class="py-3 px-5">Microsoft Analysis Services (Tabular mode), Oracle Essbase, SAP BW</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-5">ROLAP (Relational OLAP)</td>
+                                <td class="py-3 px-5">Utiliza la base de datos relacional existente del data warehouse. Las dimensiones y hechos son tablas. Las agregaciones se pueden precalcular en tablas de resumen.</td>
+                                <td class="py-3 px-5">Escalabilidad. Maneja grandes volúmenes de datos. Mayor flexibilidad.</td>
+                                <td class="py-3 px-5">Rendimiento generalmente menor que MOLAP. Las consultas SQL pueden volverse muy complejas.</td>
+                                <td class="py-3 px-5">Google BigQuery, Amazon Redshift, Snowflake, Microsoft Analysis Services (con modo ROLAP)</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-3 px-5">HOLAP (Hybrid OLAP)</td>
+                                <td class="py-3 px-5">Combina MOLAP y ROLAP. Almacena los datos detallados en la BD relacional (ROLAP) y las agregaciones en la estructura multidimensional (MOLAP).</td>
+                                <td class="py-3 px-5">Equilibrio entre rendimiento y escalabilidad.</td>
+                                <td class="py-3 px-5">Mayor complejidad en la administración.</td>
+                                <td class="py-3 px-5">Microsoft Analysis Services (es un ejemplo clásico), IBM Cognos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
         </section>
 
         <!-- Sección Anatomía de un Cubo OLAP -->
-        <section id="olap-anatomy" class="mb-12" data-aos="fade-right">
+        <section id="olap-anatomy" class="mb-12" data-aos="fade">
             <h2 class="text-3xl font-bold mb-4">Anatomía de un Cubo OLAP: Hechos, Dimensiones y Métricas</h2>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-2/3 md:pr-8">
@@ -188,10 +186,10 @@
         </section>
 
         <!-- Sección Operaciones Fundamentales en un Cubo OLAP -->
-        <section id="olap-operations" class="mb-12" data-aos="fade-up">
+        <section id="olap-operations" class="mb-12" data-aos="fade">
             <h2 class="text-3xl font-bold mb-4">Operaciones Fundamentales en un Cubo OLAP</h2>
             <div class="overflow-x-auto rounded-lg shadow-md">
-                <table class="min-w-full bg-white border-collapse">
+                <table class="min-w-full w-max bg-white border-collapse">
                     <thead class="navbar-bg text-white">
                         <tr>
                             <th class="w-1/4 py-3 px-5 text-left border-b border-gray-700">Operación</th>
@@ -237,7 +235,7 @@
         </section>
 
         <!-- Sección Cloud Computing -->
-        <section id="olap-cloud" class="mb-12" data-aos="fade-left">
+        <section id="olap-cloud" class="mb-12" data-aos="fade">
             <h2 class="text-3xl font-bold mb-4">Administración y Explotación en la Nube (Cloud Computing)</h2>
             <div class="flex flex-col md:flex-row-reverse items-center">
                 <div class="md:w-2/3 md:pl-8">
@@ -258,7 +256,7 @@
         </section>
 
         <!-- Sección Ejercicios de Aplicación -->
-        <section id="olap-exercises" class="mb-12" data-aos="fade-right">
+        <section id="olap-exercises" class="mb-12" data-aos="fade">
             <h2 class="text-3xl font-bold mb-4">Ejercicios de Aplicación y Reflexión</h2>
             <div class="ml-4">
                 <h3 class="text-xl font-semibold mt-4">Ejercicio 1: Diseño Conceptual</h3>
@@ -285,7 +283,7 @@
         </section>
 
         <!-- Sección Conclusión Integradora -->
-        <section id="olap-conclusion" class="mb-12" data-aos="fade-left">
+        <section id="olap-conclusion" class="mb-12" data-aos="fade">
             <h2 class="text-3xl font-bold mb-4">Conclusión Integradora</h2>
             <div class="flex flex-col md:flex-row-reverse items-center">
                 <div class="md:w-2/3 md:pl-8">
@@ -299,7 +297,7 @@
         </section>
 
         <!-- Sección Sugerencias para Profundizar -->
-        <section id="olap-deepen" class="mb-12" data-aos="fade-right">
+        <section id="olap-deepen" class="mb-12" data-aos="fade">
             <h2 class="text-3xl font-bold mb-4">Sugerencias para Profundizar</h2>
             <ul class="list-disc list-inside ml-4">
                 <li><strong>Práctica con Herramientas:</strong> Explora las versiones gratuitas o trials de Microsoft Power BI Desktop (para crear modelos tabulares/cubos) y conéctalo a un data warehouse en la nube como Google BigQuery, que ofrece un tier gratuito generoso.</li>
@@ -310,7 +308,7 @@
         </section>
 
         <!-- Sección ETL -->
-        <section id="etl" class="mb-12" data-aos="fade-left">
+        <section id="etl" class="mb-12" data-aos="fade">
             <h2 class="text-3xl font-bold mb-4">Flujos de Datos (ETL)</h2>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-2/3 md:pr-8">
@@ -324,7 +322,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white p-4 mt-8">
+    <footer class="bg-gray-800 text-white p-4">
         <div class="container mx-auto text-center">
             <p>&copy; 2025 - Proyecto Académico de Bases de Datos Analíticas</p>
             <p>Moto Repuestos Leyton</p>

@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moto Repuestos Leyton - Gráfico P6</title>
     <meta name="description" content="Visualización de datos del proyecto Moto Repuestos Leyton a través de gráficos interactivos.">
-    <meta name="author" content="[Tu Nombre]">
+    <meta name="author" content="Equipo de Desarrollo">
     <meta property="og:title" content="Moto Repuestos Leyton - Visualización de Datos">
     <meta property="og:description" content="Gráficos interactivos que muestran el análisis de ventas y rendimiento de productos.">
     <meta property="og:image" content="assets/img/og-image.png">
-    <meta property="og:url" content="[URL del sitio desplegado]/p6_grafico.html">
+    <meta property="og:url" content="p6_grafico.html">
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     
     <!-- CDNs -->
@@ -28,7 +27,7 @@
     <nav class="navbar-bg p-4 text-white sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold">Moto Repuestos Leyton</a>
-            <div class="hidden md:flex space-x-4">
+            <div class="hidden md:flex space-x-4 text-lg">
                 <a href="index.html" class="hover:text-gray-300">Inicio</a>
                 <a href="ejercicios.html" class="hover:text-gray-300">Ejercicios</a>
                 <a href="graficos.html" class="hover:text-gray-300">Gráficos</a>
@@ -39,20 +38,20 @@
             </button>
         </div>
         <div class="hidden md:hidden mt-2" id="mobile-menu">
-            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Inicio</a>
-            <a href="ejercicios.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Ejercicios</a>
-            <a href="graficos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos</a>
-            <a href="creditos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Créditos</a>
+            <a href="index.html" class="block py-2 px-4 text-lg hover:bg-gray-700">Inicio</a>
+            <a href="ejercicios.html" class="block py-2 px-4 text-lg hover:bg-gray-700">Ejercicios</a>
+            <a href="graficos.html" class="block py-2 px-4 text-lg hover:bg-gray-700">Gráficos</a>
+            <a href="creditos.html" class="block py-2 px-4 text-lg hover:bg-gray-700">Créditos</a>
         </div>
     </nav>
 
     <!-- Contenido Principal -->
     <main class="container mx-auto p-8 overflow-x-hidden">
         <header class="text-center mb-12">
-            <h1 class="text-4xl font-bold" data-aos="fade-down">Ingresos Totales por Categoría de Producto (P6)</h1>
+            <h1 class="text-4xl font-bold" data-aos="fade">Ingresos Totales por Categoría de Producto (P6)</h1>
         </header>
 
-        <section class="mb-12 bg-white p-6 rounded-lg shadow-md" data-aos="fade-in">
+        <section class="mb-12 bg-white p-6 rounded-lg shadow-md" data-aos="fade">
             <h2 class="text-2xl font-bold mb-4">Ingresos Totales por Categoría de Producto</h2>
             <div class="mt-4">
                 <h3 class="font-semibold">Explicación Técnica:</h3>
@@ -65,7 +64,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white p-4 mt-8">
+    <footer class="bg-gray-800 text-white p-4">
         <div class="container mx-auto text-center">
             <p>&copy; 2025 - Proyecto Académico de Bases de Datos Analíticas</p>
             <p>Moto Repuestos Leyton</p>

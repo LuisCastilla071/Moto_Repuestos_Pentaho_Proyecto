@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moto Repuestos Leyton - Ejercicios</title>
     <meta name="description" content="Descripción de los ejercicios realizados con Pentaho para el análisis de datos de Moto Repuestos Leyton.">
-    <meta name="author" content="[Tu Nombre]">
+    <meta name="author" content="Equipo de Desarrollo">
     <meta property="og:title" content="Moto Repuestos Leyton - Ejercicios con Pentaho">
     <meta property="og:description" content="Detalle de los flujos ETL y cubos OLAP desarrollados para el proyecto.">
     <meta property="og:image" content="assets/img/og-image.png">
-    <meta property="og:url" content="[URL del sitio desplegado]/ejercicios.html">
+    <meta property="og:url" content="ejercicios.html">
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     
     <!-- CDNs -->
@@ -28,7 +27,7 @@
     <nav class="navbar-bg p-4 text-white sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold">Moto Repuestos Leyton</a>
-            <div class="hidden md:flex space-x-4">
+            <div class="hidden md:flex space-x-4 text-lg">
                 <a href="index.html" class="hover:text-gray-300">Inicio</a>
                 <a href="ejercicios.html" class="hover:text-gray-300">Ejercicios</a>
                 <a href="graficos.html" class="hover:text-gray-300">Gráficos</a>
@@ -39,18 +38,18 @@
             </button>
         </div>
         <div class="hidden md:hidden mt-2" id="mobile-menu">
-            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Inicio</a>
-            <a href="ejercicios.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Ejercicios</a>
-            <a href="graficos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Gráficos</a>
-            <a href="creditos.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Créditos</a>
+            <a href="index.html" class="block py-2 px-4 text-lg hover:bg-gray-700">Inicio</a>
+            <a href="ejercicios.html" class="block py-2 px-4 text-lg hover:bg-gray-700">Ejercicios</a>
+            <a href="graficos.html" class="block py-2 px-4 text-lg hover:bg-gray-700">Gráficos</a>
+            <a href="creditos.html" class="block py-2 px-4 text-lg hover:bg-gray-700">Créditos</a>
         </div>
     </nav>
 
     <!-- Contenido Principal -->
     <main class="container mx-auto p-8 overflow-x-hidden">
         <header class="text-center mb-12">
-            <h1 class="text-4xl font-bold" data-aos="fade-down">Documentos del Proyecto</h1>
-            <p class="text-lg mt-2" data-aos="fade-up">Aquí puedes encontrar la documentación detallada de los ejercicios y recursos educativos del proyecto.</p>
+            <h1 class="text-4xl font-bold" data-aos="fade">Documentos del Proyecto</h1>
+            <p class="text-lg mt-2" data-aos="fade">Aquí puedes encontrar la documentación detallada de los ejercicios y recursos educativos del proyecto.</p>
         </header>
 
         <!-- Lista de Documentos -->
@@ -58,7 +57,7 @@
             <h2 class="text-3xl font-bold mb-8 text-center">Recursos Educativos y Ejercicios</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Card 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col" data-aos="fade-up">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col" data-aos="fade">
                     <h3 class="text-xl font-bold mb-2">Recurso Educativo 12: Simulación de Cubo OLAP</h3>
                     <p class="text-gray-700 flex-grow">Guía paso a paso para simular un cubo OLAP usando Pentaho Data Integration (versión 8) y un archivo CSV. El ejercicio cubre las operaciones OLAP clave: Drill Down (profundizar de trimestre a mes), Roll Up (resumir de mes a trimestre), Slice (filtrar por un solo mes como Mayo) y Dice (filtrar por múltiples condiciones como mes, región y producto).</p>
                     <a href="assets/docs/recurso_educativo_12.pdf" target="_blank" class="inline-block mt-4 navbar-bg text-white text-center px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300">
@@ -66,7 +65,7 @@
                     </a>
                 </div>
                 <!-- Card 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col" data-aos="fade">
                     <h3 class="text-xl font-bold mb-2">Recurso Educativo 16: Dashboard Interactivo con Chart.js</h3>
                     <p class="text-gray-700 flex-grow">Guía práctica para crear un dashboard interactivo utilizando Chart.js y HTML. El documento detalla cómo procesar datos de ventas y productos con Pentaho para generar un archivo JSON (`analisis_ventas.json`), y luego cómo visualizar los ingresos totales por categoría de producto en un gráfico de barras.</p>
                     <a href="assets/docs/recurso_educativo_16.docx.pdf" target="_blank" class="inline-block mt-4 navbar-bg text-white text-center px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300">
@@ -74,15 +73,15 @@
                     </a>
                 </div>
                 <!-- Card 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col" data-aos="fade-up">
-                    <h3 class="text-xl font-bold mb-2">Recurso Educativo 19: Flujo ETL desde CSV</h3>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col" data-aos="fade">
+                    <h3 class="text-xl font-bold mb-2">Recurso Educativo 19: Flujo ETL con Pentaho Spoon</h3>
                     <p class="text-gray-700 flex-grow">Guía paso a paso para construir un flujo ETL en Pentaho Spoon. El objetivo es leer un fact (ventas) y tres dimensiones (producto, cliente, tienda) desde archivos CSV, realizar uniones (joins) entre ellos sin necesidad de una base de datos, y generar datos agregados por año, mes y categoría de producto.</p>
                     <a href="assets/docs/recurso_educativo_19.docx.pdf" target="_blank" class="inline-block mt-4 navbar-bg text-white text-center px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300">
                         Abrir PDF <i class="fas fa-file-pdf ml-2"></i>
                     </a>
                 </div>
                 <!-- Card 4 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col" data-aos="fade">
                     <h3 class="text-xl font-bold mb-2">Recurso Educativo 20: ETL a Base de Datos HSQLDB</h3>
                     <p class="text-gray-700 flex-grow">Guía paso a paso para poblar una base de datos HSQLDB local con datos de archivos CSV utilizando Pentaho Data Integration (PDI). El documento detalla la creación de una conexión a HSQLDB, la ejecución de scripts DDL para crear tablas y la carga de datos desde CSV a estas tablas.</p>
                     <a href="assets/docs/recurso_educativo_20.docx.pdf" target="_blank" class="inline-block mt-4 navbar-bg text-white text-center px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300">
@@ -90,7 +89,7 @@
                     </a>
                 </div>
                 <!-- Card 5 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col" data-aos="fade-up">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col" data-aos="fade">
                     <h3 class="text-xl font-bold mb-2">Recurso Educativo 26: Operaciones OLAP con PDI 7.1</h3>
                     <p class="text-gray-700 flex-grow">Guía completa para realizar operaciones OLAP (Drill-down, Roll-up, Slice & Dice, Pivot) utilizando Pentaho Data Integration 7.1. El documento detalla la creación de archivos CSV de ejemplo, la configuración de una base de datos HSQLDB local y la carga de datos desde CSV.</p>
                     <a href="assets/docs/recurso_educativo_26.docx.pdf" target="_blank" class="inline-block mt-4 navbar-bg text-white text-center px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300">
@@ -98,7 +97,7 @@
                     </a>
                 </div>
                 <!-- Card 6 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col" data-aos="fade">
                     <h3 class="text-xl font-bold mb-2">Recurso Educativo 30: Simulación de Cubo OLAP con Múltiples CSV</h3>
                     <p class="text-gray-700 flex-grow">Guía para simular un cubo OLAP utilizando archivos CSV y Pentaho Data Integration (PDI). El documento describe cómo diseñar un flujo ETL en Spoon para leer datos de ventas, clientes y productos desde archivos CSV, unirlos mediante pasos 'Join Rows', y luego agregar dimensiones y medidas.</p>
                     <a href="assets/docs/recurso_educativo_30.docx.pdf" target="_blank" class="inline-block mt-4 navbar-bg text-white text-center px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300">
@@ -109,7 +108,7 @@
         </section>
 
         <!-- Repositorio en GitHub -->
-        <section class="text-center" data-aos="fade-up">
+        <section class="text-center" data-aos="fade">
             <h2 class="text-2xl font-bold mb-4">Repositorio del Proyecto</h2>
             <p class="mb-4">Todo el código fuente, los flujos de Pentaho (archivos .ktr y .kjb) y la documentación del proyecto están disponibles en nuestro repositorio de GitHub.</p>
             <a href="https://github.com/LuisCastilla071/Moto_Repuestos_Pentaho.git" target="_blank" class="navbar-bg text-white px-6 py-3 rounded-full hover:bg-gray-700 transition duration-300">
@@ -119,7 +118,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white p-4 mt-8">
+    <footer class="bg-gray-800 text-white p-4">
         <div class="container mx-auto text-center">
             <p>&copy; 2025 - Proyecto Académico de Bases de Datos Analíticas</p>
             <p>Moto Repuestos Leyton</p>
