@@ -13,6 +13,7 @@
 body {
     font-family: 'Roboto', sans-serif; /* Ejemplo de tipografía de Google Fonts */
     background-color: var(--color-neutral); /* Aplicar color pastel al fondo */
+    overflow-x: hidden;
 }
 
 /* Estilos para las secciones de gráficos */

@@ -1,5 +1,9 @@
-
 document.addEventListener('DOMContentLoaded', function () {
+    const vibrantPalette = [
+        '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+        '#FF9F40', '#8AC926', '#E75480', '#1982C4', '#F4A261'
+    ];
+
     const ingresosData = {
         "data": [
             { "fecha": "2025-01-05", "precio": 850.0, "categoria": "Electrónica", "cantidad": 1, "nombre": "Laptop A", "ingreso_total": 850.0 },
@@ -44,22 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
             datasets: [{
                 label: 'Ingresos Totales ($)',
                 data: ingresos,
-                backgroundColor: [
-                    '#A2D2FF', // Light Blue
-                    '#BDE0FE', // Lighter Blue
-                    '#FFC7EA', // Pink
-                    '#FFD1DC', // Light Pink
-                    '#F0F8FF',  // Alice Blue
-                    '#C3AED6' // Lavender
-                ],
-                borderColor: [
-                    '#A2D2FF',
-                    '#BDE0FE',
-                    '#FFC7EA',
-                    '#FFD1DC',
-                    '#F0F8FF',
-                    '#C3AED6'
-                ],
+                backgroundColor: vibrantPalette,
+                borderColor: vibrantPalette,
                 borderWidth: 1
             }]
         },

@@ -1,5 +1,9 @@
-
 document.addEventListener('DOMContentLoaded', function () {
+    const vibrantPalette = [
+        '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+        '#FF9F40', '#8AC926', '#E75480', '#1982C4', '#F4A261'
+    ];
+
     // --- Data for charts ---
     const ventasPorProductoCSV = `NOMBRE,VENTAS
 Camisa Polo,90
@@ -49,18 +53,8 @@ Cinturón Cuero,1`;
             datasets: [{
                 label: 'Ventas por Producto',
                 data: dataVentasProducto,
-                backgroundColor: [
-                    '#A2D2FF', // Light Blue
-                    '#BDE0FE', // Lighter Blue
-                    '#FFC7EA', // Pink
-                    '#FFD1DC'  // Light Pink
-                ],
-                borderColor: [
-                    '#A2D2FF',
-                    '#BDE0FE',
-                    '#FFC7EA',
-                    '#FFD1DC'
-                ],
+                backgroundColor: vibrantPalette,
+                borderColor: vibrantPalette,
                 borderWidth: 1
             }]
         },
@@ -85,16 +79,8 @@ Cinturón Cuero,1`;
             datasets: [{
                 label: 'Ingresos por Ciudad',
                 data: dataIngresosCiudad,
-                backgroundColor: [
-                    '#A2D2FF', // Light Blue
-                    '#BDE0FE', // Lighter Blue
-                    '#FFC7EA'  // Pink
-                ],
-                borderColor: [
-                    '#A2D2FF',
-                    '#BDE0FE',
-                    '#FFC7EA'
-                ],
+                backgroundColor: vibrantPalette,
+                borderColor: vibrantPalette,
                 borderWidth: 1
             }]
         },
@@ -127,18 +113,8 @@ Cinturón Cuero,1`;
             datasets: [{
                 label: 'Total de Unidades Vendidas por Producto',
                 data: dataTotalVentasProducto,
-                backgroundColor: [
-                    '#A2D2FF', // Light Blue
-                    '#BDE0FE', // Lighter Blue
-                    '#FFC7EA', // Pink
-                    '#FFD1DC'  // Light Pink
-                ],
-                borderColor: [
-                    '#A2D2FF',
-                    '#BDE0FE',
-                    '#FFC7EA',
-                    '#FFD1DC'
-                ],
+                backgroundColor: vibrantPalette,
+                borderColor: vibrantPalette,
                 borderWidth: 1
             }]
         },
