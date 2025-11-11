@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-F-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Moto Repuestos Leyton - Inicio</title>
     <meta name="description" content="Proyecto académico sobre Bases de Datos Analíticas con Pentaho, aplicado a la empresa Moto Repuestos Leyton.">
@@ -87,9 +87,10 @@
             <h2 class="text-3xl font-bold mb-4">Cubos OLAP</h2>
             <div class="flex flex-col md:flex-row-reverse items-center">
                 <div class="md:w-2/3 md:pl-8">
-                    <p class="text-lg">Imagina que eres el analista de una cadena de retail y el gerente te pregunta: "¿Cuáles fueron las ventas totales de ropa deportiva para mujeres en la región Pacifico durante el primer trimestre del 2023, y cómo se compara con el mismo período del año anterior?"</p>
-                    <p class="text-lg">Responder esto con consultas SQL tradicionales sobre bases de datos transaccionales sería complejo, lento y resource-intensive. Los sistemas OLTP (Online Transaction Processing) están optimizados para muchas transacciones cortas (insert, update, delete), no para grandes consultas analíticas que requieren recorrer millones de registros.</p>
-                    <p class="text-lg">Es aquí donde entran en juego los Cubos OLAP. Un cubo OLAP es una estructura de datos multidimensional precalculada que permite el análisis rápido y intuitivo de información desde múltiples perspectivas. Es el corazón de los sistemas de Inteligencia de Negocios (BI) y Data Warehousing.</p>
+                    <p class="text-lg mb-4">Imagina que eres el analista de una cadena de retail y el gerente te pregunta: "¿Cuáles fueron las ventas totales de ropa deportiva para mujeres en la región Pacífico durante el primer trimestre del 2023, y cómo se compara con el mismo período del año anterior?"</p>
+                    <p class="text-lg mb-4">Responder a esta pregunta con una base de datos transaccional tradicional (OLTP) podría requerir consultas complejas, lentas y que consumen muchos recursos. Aquí es donde entran en juego los <strong>Cubos OLAP</strong>.</p>
+                    <p class="text-lg mb-4">Un Cubo OLAP no es un "cubo" físico, sino una estructura de datos multidimensional que permite el análisis rápido de grandes volúmenes de información. Los datos se organizan de manera jerárquica en <strong>dimensiones</strong> (como Producto, Tiempo, Geografía) y <strong>medidas</strong> (como Ventas, Cantidad, Ingresos).</p>
+                    <p class="text-lg">En lugar de calcular los datos en el momento de la consulta, el cubo pre-calcula y almacena la información agregada. Esto permite a los usuarios "cortar" y "trocear" (slice and dice) los datos desde múltiples perspectivas de forma casi instantánea, obteniendo respuestas a preguntas complejas en segundos, no en horas.</p>
                 </div>
                 <div class="md:w-1/3 mt-4 md:mt-0">
                     <img src="assets/img/2.png" alt="Cubo OLAP" class="rounded-lg shadow-lg">
@@ -115,8 +116,16 @@
             <h2 class="text-3xl font-bold mb-4">¿Qué es OLAP? Contexto y Definición</h2>
             <div class="flex flex-col md:flex-row-reverse items-center">
                 <div class="md:w-2/3 md:pl-8">
-                    <p class="text-lg">OLAP (Online Analytical Processing) es una tecnología que permite a los usuarios extraer y visualizar datos desde diferentes puntos de vista. El término fue acuñado por el Dr. E. F. Codd, el padre de las bases de datos relacionales, en 1993.</p>
-                    <p class="text-lg">La filosofía central de OLAP es la pre-agregación. Los cálculos pesados (sumas, promedios, conteos) se realizan con anticipación durante el proceso de carga del data warehouse (proceso ETL: Extract, Transform, Load). Esto significa que cuando un usuario hace una consulta, la respuesta es casi instantánea, ya que los datos ya están sumarizados y organizados para el análisis.</p>
+                    <p class="text-lg mb-4">OLAP (Online Analytical Processing) es una categoría de software y tecnología que permite a los usuarios analizar información desde múltiples perspectivas en bases de datos multidimensionales. El término fue acuñado por el Dr. E. F. Codd, el "padre" de las bases de datos relacionales, en 1993 para diferenciar el análisis de datos del procesamiento de transacciones.</p>
+
+                    <h3 class="text-2xl font-bold mt-6 mb-3">Diferencia Clave: OLAP vs. OLTP</h3>
+                    <p class="text-lg mb-4">Es fundamental distinguir OLAP de OLTP (Online Transaction Processing):</p>
+                    <ul class="list-disc list-inside text-lg space-y-2">
+                        <li><strong>OLTP (Procesamiento de Transacciones en Línea):</strong> Son los sistemas que gestionan las operaciones del día a día: registrar una venta, dar de alta un cliente, actualizar inventario. Están optimizados para transacciones rápidas, simples y concurrentes (lecturas y escrituras).</li>
+                        <li><strong>OLAP (Procesamiento Analítico en Línea):</strong> Son sistemas diseñados para el análisis y la inteligencia de negocios. Están optimizados para consultas complejas que leen grandes volúmenes de datos históricos y agregados. Su objetivo no es registrar transacciones, sino entender el rendimiento del negocio.</li>
+                    </ul>
+
+                    <p class="text-lg mt-4">En resumen, mientras OLTP "hace funcionar" el negocio, OLAP "analiza" el negocio. Los sistemas OLAP se nutren de los datos que se originan en los sistemas OLTP, los cuales son transformados y cargados en un Data Warehouse o Cubo OLAP para su análisis.</p>
                 </div>
                 <div class="md:w-1/3 mt-4 md:mt-0">
                     <img src="assets/img/6.png" alt="Definición de OLAP" class="rounded-lg shadow-lg">
@@ -125,39 +134,39 @@
         </section>
 
         <!-- Sección Modelos de Almacenamiento OLAP -->
-        <section id="olap-models" class="mb-12" data-aos="fade">
-                <div class="overflow-x-auto rounded-lg shadow-md">
-                    <table class="min-w-full w-max bg-white border-collapse text-sm">
+        <section id="olap-models" class="mb-4" data-aos="fade">
+                <div class="overflow-x-auto rounded-lg shadow-md mx-auto">
+                    <table class="w-full bg-white border-collapse text-lg">
                         <thead class="navbar-bg text-white">
                             <tr>
-                                <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Modelo</th>
-                                <th class="w-1/2 py-1 px-2 text-left border-b border-gray-700">Descripción</th>
-                                <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Ventajas</th>
-                                <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Desventajas</th>
-                                <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Herramientas/Plataformas</th>
+                                <th class="w-1/4 py-0 px-0 text-center border-b border-gray-700">Modelo</th>
+                                <th class="w-1/2 py-0 px-0 text-center border-b border-gray-700">Descripción</th>
+                                <th class="w-1/4 py-0 px-0 text-center border-b border-gray-700">Ventajas</th>
+                                <th class="w-1/4 py-0 px-0 text-center border-b border-gray-700">Desventajas</th>
+                                <th class="w-1/4 py-0 px-0 text-center border-b border-gray-700">Herramientas/Plataformas</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="border-b border-gray-200 hover:bg-gray-50">
-                                <td class="py-1 px-2">MOLAP (Multidimensional OLAP)</td>
-                                <td class="py-1 px-2">Almacena los datos en una estructura multidimensional optimizada y propietaria (no en una BD relacional).</td>
-                                <td class="py-1 px-2">Rendimiento muy alto. Consultas extremadamente rápidas. Optimizado para operaciones OLAP.</td>
-                                <td class="py-1 px-2">Volumen de datos limitado. Proceso de carga (procesamiento del cubo) puede ser lento.</td>
-                                <td class="py-1 px-2">Microsoft Analysis Services (Tabular mode), Oracle Essbase, SAP BW</td>
+                                <td class="py-0 px-0 text-center">MOLAP (Multidimensional OLAP)</td>
+                                <td class="py-0 px-0 text-center">Almacena los datos en una estructura multidimensional optimizada y propietaria (no en una BD relacional).</td>
+                                <td class="py-0 px-0 text-center">Rendimiento muy alto. Consultas extremadamente rápidas. Optimizado para operaciones OLAP.</td>
+                                <td class="py-0 px-0 text-center">Volumen de datos limitado. Proceso de carga (procesamiento del cubo) puede ser lento.</td>
+                                <td class="py-0 px-0 text-center">Microsoft Analysis Services (Tabular mode), Oracle Essbase, SAP BW</td>
                             </tr>
                             <tr class="border-b border-gray-200 hover:bg-gray-50">
-                                <td class="py-1 px-2">ROLAP (Relational OLAP)</td>
-                                <td class="py-1 px-2">Utiliza la base de datos relacional existente del data warehouse. Las dimensiones y hechos son tablas. Las agregaciones se pueden precalcular en tablas de resumen.</td>
-                                <td class="py-1 px-2">Escalabilidad. Maneja grandes volúmenes de datos. Mayor flexibilidad.</td>
-                                <td class="py-1 px-2">Rendimiento generalmente menor que MOLAP. Las consultas SQL pueden volverse muy complejas.</td>
-                                <td class="py-1 px-2">Google BigQuery, Amazon Redshift, Snowflake, Microsoft Analysis Services (con modo ROLAP)</td>
+                                <td class="py-0 px-0 text-center">ROLAP (Relational OLAP)</td>
+                                <td class="py-0 px-0 text-center">Utiliza la base de datos relacional existente del data warehouse. Las dimensiones y hechos son tablas. Las agregaciones se pueden precalcular en tablas de resumen.</td>
+                                <td class="py-0 px-0 text-center">Escalabilidad. Maneja grandes volúmenes de datos. Mayor flexibilidad.</td>
+                                <td class="py-0 px-0 text-center">Rendimiento generalmente menor que MOLAP. Las consultas SQL pueden volverse muy complejas.</td>
+                                <td class="py-0 px-0 text-center">Google BigQuery, Amazon Redshift, Snowflake, Microsoft Analysis Services (con modo ROLAP)</td>
                             </tr>
                             <tr class="hover:bg-gray-50">
-                                <td class="py-1 px-2">HOLAP (Hybrid OLAP)</td>
-                                <td class="py-1 px-2">Combina MOLAP y ROLAP. Almacena los datos detallados en la BD relacional (ROLAP) y las agregaciones en la estructura multidimensional (MOLAP).</td>
-                                <td class="py-1 px-2">Equilibrio entre rendimiento y escalabilidad.</td>
-                                <td class="py-1 px-2">Mayor complejidad en la administración.</td>
-                                <td class="py-1 px-2">Microsoft Analysis Services (es un ejemplo clásico), IBM Cognos</td>
+                                <td class="py-0 px-0 text-center">HOLAP (Hybrid OLAP)</td>
+                                <td class="py-0 px-0 text-center">Combina MOLAP y ROLAP. Almacena los datos detallados en la BD relacional (ROLAP) y las agregaciones en la estructura multidimensional (MOLAP).</td>
+                                <td class="py-0 px-0 text-center">Equilibrio entre rendimiento y escalabilidad.</td>
+                                <td class="py-0 px-0 text-center">Mayor complejidad en la administración.</td>
+                                <td class="py-0 px-0 text-center">Microsoft Analysis Services (es un ejemplo clásico), IBM Cognos</td>
                             </tr>
                         </tbody>
                     </table>
@@ -169,15 +178,19 @@
             <h2 class="text-3xl font-bold mb-4">Anatomía de un Cubo OLAP: Hechos, Dimensiones y Métricas</h2>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-2/3 md:pr-8">
-                    <p class="text-lg">Un cubo se construye a partir de dos tipos fundamentales de tablas:</p>
-                    <div class="ml-4">
-                        <h3 class="text-xl font-semibold mt-4">Tabla de Hechos (Fact Table)</h3>
-                        <p>Es la tabla central y contiene las métricas cuantitativas (Ventas, Cantidad Vendida).</p>
-                        <h3 class="text-xl font-semibold mt-4">Tablas de Dimensiones (Dimension Tables)</h3>
-                        <p>Contienen los atributos descriptivos que contextualizan los hechos (Tiempo, Producto, Cliente).</p>
-                        <h3 class="text-xl font-semibold mt-4">Jerarquías (Hierarchies)</h3>
-                        <p>Organizan los atributos en niveles para el análisis (Año -> Trimestre -> Mes).</p>
-                    </div>
+                    <p class="text-lg mb-4">Un cubo se construye a partir de dos tipos fundamentales de tablas que trabajan en conjunto para permitir un análisis rápido y flexible:</p>
+                    <ul class="list-disc list-inside text-lg space-y-4">
+                        <li>
+                            <strong>Tabla de Hechos (Fact Table):</strong> Es la tabla central del modelo y contiene las métricas de negocio que se desean analizar. Estas métricas son datos cuantitativos y numéricos, como <em>ventas, cantidad de productos, costos o ingresos</em>. Cada registro en la tabla de hechos corresponde a un evento de negocio específico y contiene claves foráneas que la vinculan a las tablas de dimensiones.
+                        </li>
+                        <li>
+                            <strong>Tablas de Dimensión (Dimension Tables):</strong> Son tablas que describen el contexto de los hechos. Contienen atributos descriptivos y categóricos que se utilizan para filtrar, agrupar y etiquetar los datos. Por ejemplo, una dimensión "Producto" podría tener atributos como nombre, categoría, marca y color. Una dimensión "Tiempo" tendría año, mes, día, etc. Son las que responden a las preguntas "quién, qué, cuándo, dónde".
+                        </li>
+                        <li>
+                            <strong>Métricas o Medidas (Measures):</strong> Son los valores numéricos de la tabla de hechos que se agregan (suman, promedian, cuentan) para el análisis. Son el "qué" se está midiendo. Por ejemplo, en la pregunta "¿Cuáles fueron las ventas totales por región?", la "venta total" es la métrica.
+                        </li>
+                    </ul>
+                    <p class="text-lg mt-4">Juntas, estas estructuras forman un <strong>esquema en estrella (star schema)</strong>, donde la tabla de hechos está en el centro y las tablas de dimensión se ramifican como los puntos de una estrella.</p>
                 </div>
                 <div class="md:w-1/3 mt-4 md:mt-0">
                     <img src="assets/img/7.png" alt="Anatomía de un Cubo OLAP" class="rounded-lg shadow-lg">
@@ -186,48 +199,47 @@
         </section>
 
         <!-- Sección Operaciones Fundamentales en un Cubo OLAP -->
-        <section id="olap-operations" class="mb-12" data-aos="fade">
-            <h2 class="text-3xl font-bold mb-4">Operaciones Fundamentales en un Cubo OLAP</h2>
-            <div class="overflow-x-auto rounded-lg shadow-md">
-                <table class="min-w-full w-max bg-white border-collapse text-sm">
+        <section id="olap-operations" class="mb-4" data-aos="fade">
+            <div class="overflow-x-auto rounded-lg shadow-md mx-auto">
+                <table class="w-full bg-white border-collapse text-lg">
                     <thead class="navbar-bg text-white">
                         <tr>
-                            <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Operación</th>
-                            <th class="w-1/2 py-1 px-2 text-left border-b border-gray-700">Descripción</th>
-                            <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Analogía</th>
-                            <th class="w-1/4 py-1 px-2 text-left border-b border-gray-700">Ejemplo</th>
+                            <th class="w-1/4 py-0 px-0 text-center border-b border-gray-700">Operación</th>
+                            <th class="w-1/2 py-0 px-0 text-center border-b border-gray-700">Descripción</th>
+                            <th class="w-1/4 py-0 px-0 text-center border-b border-gray-700">Analogía</th>
+                            <th class="w-1/4 py-0 px-0 text-center border-b border-gray-700">Ejemplo</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-1 px-2">Slice (Corte)</td>
-                            <td class="py-1 px-2">Seleccionar una sola dimensión, creando un subcubo de dimensión N-1.</td>
-                            <td class="py-1 px-2">Cortar un cubo 3D para obtener un cuadrado 2D.</td>
-                            <td class="py-1 px-2">"Mostrar todas las ventas para Q1 2023" (se fija la dimensión Tiempo).</td>
+                            <td class="py-0 px-0 text-center">Slice (Corte)</td>
+                            <td class="py-0 px-0 text-center">Seleccionar una sola dimensión, creando un subcubo de dimensión N-1.</td>
+                            <td class="py-0 px-0 text-center">Cortar un cubo 3D para obtener un cuadrado 2D.</td>
+                            <td class="py-0 px-0 text-center">"Mostrar todas las ventas para Q1 2023" (se fija la dimensión Tiempo).</td>
                         </tr>
                         <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-1 px-2">Dice (Dado)</td>
-                            <td class="py-1 px-2">Seleccionar un subconjunto de valores en múltiples dimensiones. El cubo resultante tiene las mismas dimensiones.</td>
-                            <td class="py-1 px-2">Cortar un cubo para obtener un cubo más pequeño.</td>
-                            <td class="py-1 px-2">"Ventas de Ropa Deportiva en la Región Pacifico durante Q1 2023".</td>
+                            <td class="py-0 px-0 text-center">Dice (Dado)</td>
+                            <td class="py-0 px-0 text-center">Seleccionar un subconjunto de valores en múltiples dimensiones. El cubo resultante tiene las mismas dimensiones.</td>
+                            <td class="py-0 px-0 text-center">Cortar un cubo para obtener un cubo más pequeño.</td>
+                            <td class="py-0 px-0 text-center">"Ventas de Ropa Deportiva en la Región Pacifico durante Q1 2023".</td>
                         </tr>
                         <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-1 px-2">Drill-Down (Profundizar)</td>
-                            <td class="py-1 px-2">Navegar de un nivel de resumen a un nivel más detallado dentro de una jerarquía.</td>
-                            <td class="py-1 px-2">Hacer zoom en un mapa.</td>
-                            <td class="py-1 px-2">De "Ventas por Año" -> "Ventas por Trimestre de 2023" -> "Ventas por Mes de Q1 2023".</td>
+                            <td class="py-0 px-0 text-center">Drill-Down (Profundizar)</td>
+                            <td class="py-0 px-0 text-center">Navegar de un nivel de resumen a un nivel más detallado dentro de una jerarquía.</td>
+                            <td class="py-0 px-0 text-center">Hacer zoom en un mapa.</td>
+                            <td class="py-0 px-0 text-center">De "Ventas por Año" -> "Ventas por Trimestre de 2023" -> "Ventas por Mes de Q1 2023".</td>
                         </tr>
                         <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-1 px-2">Roll-Up (Summarize)</td>
-                            <td class="py-1 px-2">Lo opuesto a Drill-Down. Consolidar datos a un nivel más alto de resumen.</td>
-                            <td class="py-1 px-2">Alejar el zoom de un mapa.</td>
-                            <td class="py-1 px-2">De "Ventas por Mes" -> "Ventas por Trimestre" -> "Ventas por Año".</td>
+                            <td class="py-0 px-0 text-center">Roll-Up (Summarize)</td>
+                            <td class="py-0 px-0 text-center">Lo opuesto a Drill-Down. Consolidar datos a un nivel más alto de resumen.</td>
+                            <td class="py-0 px-0 text-center">Alejar el zoom de un mapa.</td>
+                            <td class="py-0 px-0 text-center">De "Ventas por Mes" -> "Ventas por Trimestre" -> "Ventas por Año".</td>
                         </tr>
                         <tr class="hover:bg-gray-50">
-                            <td class="py-1 px-2">Pivot (Rotar)</td>
-                            <td class="py-1 px-2">Rotar el eje de visualización de los datos para cambiar la perspectiva.</td>
-                            <td class="py-1 px-2">Girar el cubo de Rubik.</td>
-                            <td class="py-1 px-2">Cambiar la visualización de "Ventas por Producto y Tiempo" a "Ventas por Tiempo y Ubicación".</td>
+                            <td class="py-0 px-0 text-center">Pivot (Rotar)</td>
+                            <td class="py-0 px-0 text-center">Rotar el eje de visualización de los datos para cambiar la perspectiva.</td>
+                            <td class="py-0 px-0 text-center">Girar el cubo de Rubik.</td>
+                            <td class="py-0 px-0 text-center">Cambiar la visualización de "Ventas por Producto y Tiempo" a "Ventas por Tiempo y Ubicación".</td>
                         </tr>
                     </tbody>
                 </table>
@@ -239,15 +251,23 @@
             <h2 class="text-3xl font-bold mb-4">Administración y Explotación en la Nube (Cloud Computing)</h2>
             <div class="flex flex-col md:flex-row-reverse items-center">
                 <div class="md:w-2/3 md:pl-8">
-                    <p class="text-lg">Administrar un Data Warehouse y sus cubos OLAP on-premise (en servidores locales) implica grandes costos iniciales en hardware, licencias de software, y un equipo especializado para el mantenimiento, escalado y seguridad.</p>
-                    <p class="text-lg">La tendencia absoluta es migrar estas cargas analíticas a la nube debido a sus ventajas abrumadoras:</p>
-                    <ul class="list-disc list-inside ml-4">
-                        <li><strong>Escalabilidad Elástica:</strong> Aumentar o reducir la capacidad de cómputo y almacenamiento en minutos, según la demanda.</li>
-                        <li><strong>Rendimiento y Velocidad:</strong> Plataformas como Snowflake, Google BigQuery o Amazon Redshift ofrecen un rendimiento superior.</li>
-                        <li><strong>Mantenimiento Cero:</strong> El proveedor de la nube se encarga de la infraestructura, permitiendo al equipo de TI enfocarse en el análisis.</li>
-                        <li><strong>Integración de Servicios:</strong> Facilita la creación de un ecosistema de datos completo, desde la ingestión hasta la visualización.</li>
-                        <li><strong>Acceso y Colaboración:</strong> Disponibilidad global y segura que facilita el trabajo remoto.</li>
+                    <p class="text-lg mb-4">Administrar un Data Warehouse y sus cubos OLAP on-premise (en servidores locales) implica grandes costos iniciales en hardware, licencias de software, y un equipo especializado para el mantenimiento, escalado y seguridad. La computación en la nube (Cloud Computing) ofrece una alternativa poderosa que transforma este paradigma.</p>
+                    <p class="text-lg mb-4">Al migrar a la nube, las organizaciones pueden aprovechar plataformas de datos como servicio (PaaS) o software como servicio (SaaS) que ofrecen beneficios clave:</p>
+                    <ul class="list-disc list-inside text-lg space-y-4">
+                        <li>
+                            <strong>Modelo de Costos (OpEx vs. CapEx):</strong> Se elimina la necesidad de una gran inversión inicial en infraestructura (CapEx). En su lugar, se adopta un modelo de pago por uso (OpEx), lo que optimiza los costos y reduce la barrera de entrada.
+                        </li>
+                        <li>
+                            <strong>Escalabilidad y Elasticidad:</strong> Las plataformas en la nube permiten escalar los recursos de cómputo y almacenamiento de forma casi instantánea. Si la demanda de análisis aumenta, se pueden añadir más recursos con unos pocos clics y reducirlos cuando ya no son necesarios, pagando solo por lo que se utiliza.
+                        </li>
+                        <li>
+                            <strong>Servicios Gestionados:</strong> El proveedor de la nube se encarga de la administración de la infraestructura subyacente, incluyendo el mantenimiento del hardware, las actualizaciones de software, la seguridad física y la disponibilidad, liberando al equipo de TI para que se enfoque en tareas de mayor valor.
+                        </li>
+                        <li>
+                            <strong>Accesibilidad y Colaboración Global:</strong> Los datos y las herramientas de análisis son accesibles desde cualquier lugar con una conexión a internet, facilitando la colaboración entre equipos distribuidos geográficamente.
+                        </li>
                     </ul>
+                    <p class="text-lg mt-4">Plataformas líderes como <strong>Amazon Redshift, Google BigQuery, Snowflake y Azure Synapse Analytics</strong> son ejemplos de data warehouses en la nube que ofrecen estas capacidades, permitiendo a las empresas analizar grandes volúmenes de datos de manera eficiente y rentable.</p>
                 </div>
                 <div class="md:w-1/3 mt-4 md:mt-0">
                     <img src="assets/img/4.png" alt="Cloud Computing" class="rounded-lg shadow-lg">
@@ -288,7 +308,6 @@
             <div class="flex flex-col md:flex-row-reverse items-center">
                 <div class="md:w-2/3 md:pl-8">
                     <p class="text-lg">Los cubos OLAP son mucho más que un concepto técnico; son la materialización de una necesidad empresarial: transformar datos crudos en información accionable de forma rápida e intuitiva. Al dominar su estructura (hechos, dimensiones, métricas), sus operaciones fundamentales (slice, dice, drill-down/roll-up, pivot) y los modelos de almacenamiento (MOLAP, ROLAP, HOLAP), usted adquiere la capacidad de diseñar sistemas de análisis que responden a las preguntas complejas del negocio.</p>
-                    <p class="text-lg">Hoy, este poder analítico se democratiza y potencia a través del cloud computing. Plataformas como Google BigQuery, Azure Synapse Analytics o Amazon Redshift abstracten la complejidad de la administración, permitiéndole enfocarse en lo más importante: extraer insights valiosos que guíen la toma de decisiones estratégicas. Usted, como futuro ingeniero, no solo debe entender cómo funcionan estos sistemas, sino también cómo aprovechar las mejores plataformas disponibles para implementarlos de manera eficiente y escalable.</p>
                 </div>
                 <div class="md:w-1/3 mt-4 md:mt-0">
                     <img src="assets/img/8.png" alt="Conclusión sobre OLAP" class="rounded-lg shadow-lg">
