@@ -10,6 +10,10 @@
     --color-dropdown-bg: #7a8ce0; /* Slightly darker or complementary for dropdown */
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Roboto', sans-serif; /* Ejemplo de tipografía de Google Fonts */
     background-color: var(--color-neutral); /* Aplicar color pastel al fondo */
