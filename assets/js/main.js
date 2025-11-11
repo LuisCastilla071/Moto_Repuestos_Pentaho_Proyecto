@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     // Inicialización de AOS (Animate On Scroll)
     AOS.init({ once: true, duration: 1000 });
@@ -17,17 +18,4 @@ document.addEventListener('DOMContentLoaded', function () {
         speed: 800,
         speedAsDuration: true
     });
-
-    // Intento de deshabilitar el zoom en dispositivos táctiles
-    window.addEventListener('touchstart', function(event) {
-        if (event.touches.length > 1) {
-            event.preventDefault();
-        }
-    }, { passive: false });
-
-    window.addEventListener('touchmove', function(event) {
-        if (event.scale !== 1) {
-            event.preventDefault();
-        }
-    }, { passive: false });
 });
