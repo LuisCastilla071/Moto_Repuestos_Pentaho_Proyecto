@@ -10,14 +10,9 @@
     --color-dropdown-bg: #7a8ce0; /* Slightly darker or complementary for dropdown */
 }
 
-html {
-    overflow-x: hidden;
-}
-
 body {
     font-family: 'Roboto', sans-serif; /* Ejemplo de tipografía de Google Fonts */
     background-color: var(--color-neutral); /* Aplicar color pastel al fondo */
-    overflow-x: hidden;
 }
 
 /* Estilos para las secciones de gráficos */
@@ -55,3 +50,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Puedes agregar más estilos personalizados aquí */
+
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform; /* Asegura la transición para opacidad y transformación */
+}
